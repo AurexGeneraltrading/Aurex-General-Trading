@@ -1,0 +1,10 @@
+body {
+    background-color: lightgray;
+    text-align: center;
+    font-family: Arial;
+    padding-top: 100px;
+}
+
+h1 {
+    color: darkblue;
+}
