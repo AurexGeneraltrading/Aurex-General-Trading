@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Aurex General Trading | Global Trade & Supply Chain Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            border-bottom: 1px solid #eef2f5;
+            position: relative;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Desktop Navigation */
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1f2e3a;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #e0ac2c;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #e0ac2c;
+            padding: 8px 20px;
+            border-radius: 40px;
+            background: transparent;
+            font-weight: 600;
+            color: #1f4e3c;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #e0ac2c;
+            color: white;
+            border-color: #e0ac2c;
+        }
+
+        /* Mobile Menu Button (Hamburger) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #1f4e3c;
+            margin: 5px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        /* Mobile Sidebar */
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: #1f4e3c;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: right 0.3s ease;
+            padding: 80px 30px 30px;
+            overflow-y: auto;
+        }
+
+        .mobile-sidebar.active {
+            right: 0;
+        }
+
+        .mobile-sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            transition: 0.2s;
+        }
+
+        .mobile-sidebar a:hover {
+            color: #e0ac2c;
+            padding-left: 10px;
+        }
+
+        .mobile-sidebar .mobile-quote-btn {
+            background: #e0ac2c;
+            color: #1f4e3c;
+            text-align: center;
+            border-radius: 40px;
+            margin-top: 20px;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        .mobile-sidebar .mobile-quote-btn:hover {
+            background: #c9991f;
+            padding-left: 12px;
+        }
+
+        /* Close button for sidebar */
+        .close-sidebar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Overlay when sidebar is open */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* hero */
+        .hero {
+            padding: 70px 0 60px;
+            background: linear-gradient(135deg, #fef9ef 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .hero-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .hero-badge {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #e0ac2c;
+            font-weight: 600;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #1f3b2c;
+            max-width: 750px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 780px;
+            color: #2c3e44;
+            margin: 20px 0 16px;
+        }
+
+        .btn-primary {
+            background: #1f4e3c;
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            font-weight: 600;
+            border-radius: 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: #143a2c;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 70px 0;
+            border-bottom: 1px solid #ecf3f0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1f3b2c;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .section-sub {
+            font-size: 1rem;
+            color: #5e727b;
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .card-bg {
+            background: #fafbfc;
+            padding: 32px;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f0;
+        }
+
+        .card-bg h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #1f4e3c;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e2eae7;
+            border-radius: 24px;
+            padding: 28px 20px;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .service-card h4 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1f3b2c;
+        }
+
+        .service-card p {
+            color: #4a5b64;
+            font-size: 0.95rem;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .badge-service {
+            display: inline-block;
+            background: #e9f3ef;
+            color: #1f4e3c;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 18px;
+        }
+        
+        /* Sectors We Deal - Premium Section */
+        .sectors-section {
+            background: linear-gradient(135deg, #1f4e3c 0%, #143a2c 100%);
+            color: white;
+            border-radius: 40px;
+            margin: 40px 0;
+            padding: 60px 40px;
+        }
+        
+        .sectors-section .section-title {
+            color: white;
+            text-align: center;
+        }
+        
+        .sectors-section .section-sub {
+            color: #e0ac2c;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .sector-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px 25px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .sector-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+            border-color: #e0ac2c;
+        }
+        
+        .sector-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .sector-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #e0ac2c;
+        }
+        
+        .sector-card p {
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        
+        .image-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .image-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .image-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .image-card p {
+            padding: 15px;
+            background: white;
+            font-weight: 600;
+            text-align: center;
+            color: #1f4e3c;
+        }
+
+        .contact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #cddad4;
+            border-radius: 20px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: #fff;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .contact-info p {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+        
+        .contact-info strong {
+            color: #1f4e3c;
+            min-width: 80px;
+        }
+        
+        .connecting-section {
+            background: linear-gradient(135deg, #f8f6f0, #ffffff);
+            padding: 50px;
+            border-radius: 28px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        footer {
+            background: #0f2a21;
+            color: #d9e3de;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: center;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 800px) {
+            .two-col-grid, .contact-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .logo img {
+                height: 55px;
+            }
+            
+            .connecting-section {
+                padding: 30px 20px;
+            }
+            
+            .sectors-section {
+                padding: 40px 20px;
+            }
+            
+            .sector-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            /* Hide desktop navigation on mobile */
+            .nav-links {
+                display: none;
+            }
+            
+            /* Show mobile menu button */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sectors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            .building-materials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn-primary {
+                padding: 12px 28px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Desktop styles (above 800px) */
+        @media (min-width: 801px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        
+        .preview-note {
+            background: #f3eee3;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.8rem;
+            color: #856404;
+            border-bottom: 1px solid #f1e5c9;
+        }
+        
+        .contact-details {
+            background: #fefcf9;
+            padding: 28px;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .building-materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        /* Animated hamburger to X when open */
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    </style>
+</head>
+<body>
+<div class="preview-note">
+    🌍 Aurex General Trading — Your Trusted Global Partner | Official Website
+</div>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Aurex Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 300 100%27%3E%3Crect width=%27300%27 height=%27100%27 fill=%27%231f4e3c%27/%3E%3Ctext x=%2720%27 y=%2740%27 font-family=%27Arial%27 font-size=%2720%27 fill=%27%23e0ac2c%27 font-weight=%27bold%27%3EAUREX%3C/text%3E%3Ctext x=%2720%27 y=%2765%27 font-family=%27Arial%27 font-size=%2712%27 fill=%27white%27%3EGENERAL TRADING FZ LLC%3C/text%3E%3Ctext x=%2720%27 y=%2785%27 font-family=%27Arial%27 font-size=%2710%27 fill=%27%23e0ac2c%27%3Eأوروبا جبرال تريدينغ م.م.ز%3C/text%3E%3C/svg%3E'">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#sectors">Sectors</a>
+                <a href="#services">Our Services</a>
+                <a href="#about">About Aurex</a>
+                <a href="#contact">Contact</a>
+                <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+            </div>
+            
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Sidebar -->
+<div class="mobile-sidebar" id="mobileSidebar">
+    <button class="close-sidebar" id="closeSidebarBtn">&times;</button>
+    <a href="#">Home</a>
+    <a href="#sectors">Sectors We Deal</a>
+    <a href="#services">Our Services</a>
+    <a href="#about">About Aurex</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="mobile-quote-btn">Get a Quote ✨</a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<main>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="container hero-grid">
+            <div class="hero-badge">✦ Your gateway to global trade</div>
+            <h2>Connecting markets,<br>building futures</h2>
+            <p>Aurex General Trading, based in Ajman, UAE, is a trusted partner in global import and export solutions. We specialize in the supply and distribution of <strong>building materials, construction tools, safety equipment, and industrial essentials</strong>, catering to diverse project needs. With a strong network and commitment to quality, we ensure reliable sourcing, timely delivery, and competitive pricing.</p>
+            <div>
+                <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore our sectors →</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sectors We Deal - Premium Section -->
+    <div class="container" id="sectors">
+        <div class="sectors-section">
+            <div class="section-title">Sectors We Deal</div>
+            <div class="section-sub">Premium quality products for every industry need</div>
+            
+            <div class="sectors-grid">
+                <div class="sector-card">
+                    <div class="sector-icon">🏗️</div>
+                    <h3>Industrial Tools</h3>
+                    <p>Heavy-duty industrial tools, hand tools, power tools, and precision equipment for manufacturing and construction sectors.</p>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-icon">🏢</div>
+                    <h3>Building Materials</h3>
+                    <p>High-quality steel, cement, bricks, aggregates, and all essential construction materials for infrastructure projects.</p>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-icon">⚡</div>
+                    <h3>Electrical Equipments & Materials</h3>
+                    <p>Complete range of electrical components, wiring, switches, panels, and industrial electrical solutions.</p>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-icon">🛡️</div>
+                    <h3>Industrial Safety Equipments & Materials</h3>
+                    <p>PPE, safety gear, helmets, gloves, goggles, and comprehensive workplace safety solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Building Materials Stock Images Showcase -->
+    <div class="container">
+        <div class="section-title" style="font-size: 1.8rem; text-align: center;">Our Premium Product Range</div>
+        <div class="building-materials-grid">
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600" alt="Steel construction materials">
+                <p>Steel & Structural Materials</p>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600" alt="Cement and concrete">
+                <p>Cement & Concrete Products</p>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1581092335871-4f5d4f0ca8bf?w=600" alt="Industrial tools">
+                <p>Industrial Tools & Equipment</p>
+            </div>
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600" alt="Safety equipment">
+                <p>Safety Equipment & PPE</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About + Mission -->
+    <section id="about">
+        <div class="container">
+            <div class="two-col-grid">
+                <div class="card-bg">
+                    <h3>About Aurex Trading</h3>
+                    <p>Aurex General Trading is a dynamic trading and export company based in the heart of Dubai, UAE, specializing in <strong>building materials, construction tools, safety equipment, and industrial supplies</strong>. We are committed to delivering high-quality products and fostering strong global connections through efficient and reliable trade solutions.</p>
+                    <p style="margin-top: 16px;">Our focus is on supporting construction and industrial sectors with dependable sourcing, competitive pricing, and timely delivery. Driven by integrity and innovation, our vision is to become a trusted partner and leading name in international trade.</p>
+                </div>
+                <div class="card-bg">
+                    <h3>Our Mission</h3>
+                    <p>At Aurex General Trading, our mission is to simplify international trade by delivering reliable solutions in <strong>building materials, construction tools, safety equipment, and industrial supplies</strong>. We are dedicated to providing exceptional service through efficient sourcing, timely delivery, and competitive pricing, while maintaining the highest standards of quality and transparency.</p>
+                    <p style="margin-top: 16px;">We aim to support construction and industrial projects with dependable products and to build lasting partnerships based on trust, reliability, and mutual success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Export Solutions -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">Export solutions</div>
+            <div class="section-sub">Empowering global trade with reliable supply chains and wholesale excellence.</div>
+            <div class="service-grid">
+                <div class="service-card"><div class="service-icon">🏭</div><span class="badge-service">wholesale</span><h4>Wholesale Supply of Industrial Products</h4><p>Providing bulk supply of tools, electrical equipment, safety equipment, and building materials to businesses, contractors, and retailers.</p></div>
+                <div class="service-card"><div class="service-icon">🌍</div><span class="badge-service">worldwide</span><h4>Export Services Worldwide</h4><p>Exporting high-quality products to GCC countries and international markets with reliable logistics and documentation support.</p></div>
+                <div class="service-card"><div class="service-icon">🛠️</div><span class="badge-service">range</span><h4>Wide Product Range</h4><p>Hand tools, power tools, electrical components, personal protective equipment (PPE), and construction materials.</p></div>
+                <div class="service-card"><div class="service-icon">🔍</div><span class="badge-service">sourcing</span><h4>Sourcing & Procurement</h4><p>Assisting clients in sourcing specific products from trusted manufacturers based on quality, budget, and requirements.</p></div>
+                <div class="service-card"><div class="service-icon">⚙️</div><span class="badge-service">optimization</span><h4>Supply chain optimization</h4><p>Streamlining your supply chain to reduce costs, improve efficiency, and enhance operational performance in global trade.</p></div>
+                <div class="service-card"><div class="service-icon">📦</div><span class="badge-service">bulk orders</span><h4>Bulk Order Fulfillment</h4><p>Efficient handling of large-volume orders with competitive pricing and timely delivery.</p></div>
+                <div class="service-card"><div class="service-icon">✅</div><span class="badge-service">quality</span><h4>Quality Assurance</h4><p>Ensuring all products meet industry standards, sourced from reliable and certified suppliers.</p></div>
+                <div class="service-card"><div class="service-icon">⚠️</div><span class="badge-service">risk</span><h4>Risk management</h4><p>Comprehensive risk assessment covering currency fluctuations, political instability, and logistical challenges.</p></div>
+                <div class="service-card"><div class="service-icon">🚢</div><span class="badge-service">logistics</span><h4>Logistics & Shipping Support</h4><p>Coordinating transportation, export documentation, and shipment tracking for domestic & international deliveries.</p></div>
+                <div class="service-card"><div class="service-icon">🎯</div><span class="badge-service">customized</span><h4>Customized Solutions for Clients</h4><p>Tailored procurement and supply strategies across different industries.</p></div>
+                <div class="service-card"><div class="service-icon">🤝</div><span class="badge-service">network</span><h4>Strong Supplier Network</h4><p>Maintaining partnerships with reputable manufacturers to ensure consistent product availability.</p></div>
+                <div class="service-card"><div class="service-icon">💬</div><span class="badge-service">support</span><h4>Customer Support & After-Sales Service</h4><p>Responsive service, order assistance, and post-delivery support to ensure client satisfaction.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connecting Markets, Building Futures Section -->
+    <div class="container">
+        <div class="connecting-section">
+            <div class="section-title" style="margin-bottom: 20px;">Connecting markets,<br>building futures</div>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">At Aurex General Trading, we leverage our strategic location in Dubai and extensive network to provide unparalleled trading and export services. We are dedicated to delivering excellence and fostering long-term partnerships that drive mutual growth.</p>
+            <p style="margin-top: 20px;"><strong>📍 Strategic hub:</strong> UAE — bridging East & West trade routes.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">Get in touch</div>
+            <div class="contact-row">
+                <div>
+                    <div class="card-bg" style="padding: 32px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 24px;">Request a quote</h3>
+                        <form id="contactForm" action="#" method="post">
+                            <div class="form-group">
+                                <input type="text" placeholder="Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email address *" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Message *" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%; text-align: center;">Submit form →</button>
+                        </form>
+                        <p style="margin-top: 24px; font-size: 0.8rem;">We'll get back within 24h.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-details">
+                        <h3 style="color:#1f4e3c; margin-bottom: 24px;">Contact Information</h3>
+                        <div class="contact-info">
+                            <p><strong>📧 Email:</strong> sales@aurexgeneraltrading.com</p>
+                            <p><strong>📞 Phone:</strong> +971 586779954</p>
+                            <p><strong>📞 Phone:</strong> +971 542528907</p>
+                            <p><strong>📍 Office Number:</strong> CWS-1V-224656</p>
+                            <p><strong>🏢 Our Address:</strong> 26th Floor, Amber Gem Tower, Ajman, UAE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px; text-align: center; background: #eef3f0; padding: 24px; border-radius: 48px;">
+                <p style="font-weight: 500;">✔️ 24/7 customer support | ✔️ trusted by GCC contractors | ✔️ full documentation & compliance</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div>© 2026 Aurex General Trading FZE LLC — All rights reserved</div>
+        <div>📍 Ajman, UAE | Global trade solutions</div>
+        <div><span style="color:#e0ac2c;">✦</span> Integrity & Innovation</div>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const overlay = document.getElementById('overlay');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    
+    function openSidebar() {
+        mobileSidebar.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        mobileMenuBtn.classList.add('active');
+    }
+    
+    function closeSidebar() {
+        mobileSidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        mobileMenuBtn.classList.remove('active');
+    }
+    
+    mobileMenuBtn.addEventListener('click', openSidebar);
+    closeSidebarBtn.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+    
+    // Close sidebar when clicking on a link
+    const mobileLinks = mobileSidebar.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            closeSidebar();
+            // Smooth scroll to section
+            const hash = this.getAttribute('href');
+            if(hash && hash.startsWith('#') && hash !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if(target) target.scrollIntoView({behavior: 'smooth'});
+            }
+        });
+    });
+    
+    // Contact Form Submission
+    const form = document.getElementById('contactForm');
+    if(form) {
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            alert('Thank you! Aurex team will reach out shortly. Your request has been received.');
+            form.reset();
+        });
+    }
+    
+    // Smooth scroll for desktop navigation
+    document.querySelectorAll('.nav-links a, .btn-outline, .btn-primary').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if(hash && hash.startsWith('#') && hash !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if(target) target.scrollIntoView({behavior: 'smooth'});
+                closeSidebar();
+            }
+        });
+    });
+</script>
+</body>
+</html>
