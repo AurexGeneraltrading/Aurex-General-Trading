@@ -23,10 +23,12 @@
 
         .container {
             width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Mobile-First Navbar */
+        /* ========== BASE STYLES (Mobile First) ========== */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -47,14 +49,13 @@
             object-fit: contain;
         }
 
-        /* Mobile Menu Button */
+        /* Mobile Menu Button - Hidden on Desktop */
         .mobile-menu-btn {
-            background: none;
+            background: #f5f7f6;
             border: none;
             cursor: pointer;
             padding: 10px;
             z-index: 1001;
-            background: #f5f7f6;
             border-radius: 12px;
             width: 44px;
             height: 44px;
@@ -72,6 +73,11 @@
             background-color: #1f4e3c;
             transition: 0.3s;
             border-radius: 3px;
+        }
+
+        /* Desktop Navigation - Hidden on Mobile */
+        .desktop-nav {
+            display: none;
         }
 
         /* Mobile Sidebar */
@@ -153,7 +159,7 @@
             display: block;
         }
 
-        /* Hero Section - Mobile Optimized */
+        /* Hero Section - Mobile */
         .hero {
             padding: 40px 20px;
             background: linear-gradient(135deg, #fef9ef 0%, #ffffff 100%);
@@ -218,7 +224,7 @@
             margin-bottom: 30px;
         }
 
-        /* Sectors Section - Mobile Premium */
+        /* Sectors Section - Mobile */
         .sectors-section {
             background: linear-gradient(135deg, #1f4e3c 0%, #143a2c 100%);
             border-radius: 28px;
@@ -272,7 +278,7 @@
             line-height: 1.5;
         }
 
-        /* Product Images Grid - Mobile */
+        /* Product Grid - Mobile */
         .product-grid {
             display: flex;
             flex-direction: column;
@@ -451,7 +457,6 @@
             font-weight: 500;
         }
 
-        /* Footer - Mobile */
         footer {
             background: #0f2a21;
             color: #d9e3de;
@@ -467,7 +472,6 @@
             font-size: 0.8rem;
         }
 
-        /* Preview Note */
         .preview-note {
             background: #f3eee3;
             text-align: center;
@@ -476,15 +480,185 @@
             color: #856404;
         }
 
-        /* Touch-friendly buttons */
         button, .btn-outline, .btn-primary, .sector-card, .service-card {
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Scroll padding for anchor links */
         html {
             scroll-padding-top: 80px;
+        }
+
+        /* ========== DESKTOP STYLES (Above 900px) ========== */
+        @media (min-width: 900px) {
+            /* Show Desktop Navigation, Hide Mobile Menu */
+            .desktop-nav {
+                display: flex;
+                gap: 32px;
+                align-items: center;
+            }
+
+            .desktop-nav a {
+                text-decoration: none;
+                font-weight: 500;
+                color: #1f2e3a;
+                transition: color 0.2s;
+                font-size: 0.95rem;
+            }
+
+            .desktop-nav a:hover {
+                color: #e0ac2c;
+            }
+
+            .btn-outline {
+                border: 1.5px solid #e0ac2c;
+                padding: 8px 20px;
+                border-radius: 40px;
+                background: transparent;
+                font-weight: 600;
+                color: #1f4e3c;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+
+            .btn-outline:hover {
+                background: #e0ac2c;
+                color: white;
+                border-color: #e0ac2c;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            /* Desktop Hero */
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero .container {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 0 40px;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+                max-width: 750px;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                max-width: 780px;
+            }
+
+            .btn-primary {
+                width: auto;
+                padding: 14px 36px;
+            }
+
+            /* Desktop Sectors Grid */
+            .sectors-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 25px;
+                margin-top: 50px;
+            }
+
+            .sector-card:hover {
+                transform: translateY(-5px);
+            }
+
+            /* Desktop Product Grid */
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 25px;
+            }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+                transition: transform 0.3s;
+            }
+
+            /* Desktop About & Mission */
+            .two-col-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            /* Desktop Services Grid */
+            .service-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            }
+
+            /* Desktop Contact */
+            .contact-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            /* Desktop Connecting Section */
+            .connecting-section {
+                padding: 50px;
+            }
+
+            .connecting-section p {
+                font-size: 1rem;
+            }
+
+            /* Desktop Footer */
+            .footer-inner {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            /* Desktop Container */
+            .container {
+                padding: 0 40px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .section-sub {
+                font-size: 1rem;
+            }
+        }
+
+        /* Tablet Styles (600px - 900px) */
+        @media (min-width: 600px) and (max-width: 899px) {
+            .sectors-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .service-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -498,6 +672,18 @@
     <div class="logo">
         <img src="logo.png" alt="Aurex Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 60%27%3E%3Crect width=%27200%27 height=%2760%27 fill=%27%231f4e3c%27/%3E%3Ctext x=%2710%27 y=%2725%27 font-family=%27Arial%27 font-size=%2712%27 fill=%27%23e0ac2c%27 font-weight=%27bold%27%3EAUREX%3C/text%3E%3Ctext x=%2710%27 y=%2740%27 font-family=%27Arial%27 font-size=%277%27 fill=%27white%27%3EGENERAL TRADING%3C/text%3E%3C/svg%3E'">
     </div>
+    
+    <!-- Desktop Navigation -->
+    <div class="desktop-nav">
+        <a href="#">Home</a>
+        <a href="#sectors">Sectors</a>
+        <a href="#services">Our Services</a>
+        <a href="#about">About Aurex</a>
+        <a href="#contact">Contact</a>
+        <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+    </div>
+    
+    <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" id="mobileMenuBtn">
         <span></span>
         <span></span>
@@ -520,10 +706,12 @@
 <main>
     <!-- Hero Section -->
     <div class="hero">
-        <div class="hero-badge">✦ Your gateway to global trade</div>
-        <h2>Connecting markets, building futures</h2>
-        <p>Aurex General Trading, based in Ajman, UAE, is a trusted partner in global import and export solutions. We specialize in the supply and distribution of <strong>building materials, construction tools, safety equipment, and industrial essentials</strong>.</p>
-        <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore Our Sectors →</button>
+        <div class="container">
+            <div class="hero-badge">✦ Your gateway to global trade</div>
+            <h2>Connecting markets, building futures</h2>
+            <p>Aurex General Trading, based in Ajman, UAE, is a trusted partner in global import and export solutions. We specialize in the supply and distribution of <strong>building materials, construction tools, safety equipment, and industrial essentials</strong>.</p>
+            <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore Our Sectors →</button>
+        </div>
     </div>
     
     <!-- Sectors We Deal -->
@@ -660,15 +848,17 @@
 </main>
 
 <footer>
-    <div class="footer-inner">
-        <div>© 2026 Aurex General Trading FZE LLC</div>
-        <div>📍 Ajman, UAE | Global trade solutions</div>
-        <div><span style="color:#e0ac2c;">✦</span> Integrity & Innovation</div>
+    <div class="container">
+        <div class="footer-inner">
+            <div>© 2026 Aurex General Trading FZE LLC</div>
+            <div>📍 Ajman, UAE | Global trade solutions</div>
+            <div><span style="color:#e0ac2c;">✦</span> Integrity & Innovation</div>
+        </div>
     </div>
 </footer>
 
 <script>
-    // Mobile Menu
+    // Mobile Menu Functionality
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileSidebar = document.getElementById('mobileSidebar');
     const overlay = document.getElementById('overlay');
@@ -686,15 +876,34 @@
         document.body.style.overflow = '';
     }
     
-    mobileMenuBtn.addEventListener('click', openSidebar);
-    closeSidebarBtn.addEventListener('click', closeSidebar);
-    overlay.addEventListener('click', closeSidebar);
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openSidebar);
+    }
+    if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', closeSidebar);
+    }
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+    }
     
-    // Close sidebar on link click
-    const mobileLinks = mobileSidebar.querySelectorAll('a');
+    // Close sidebar on link click (mobile only)
+    const mobileLinks = document.querySelectorAll('.mobile-sidebar a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             closeSidebar();
+            const hash = this.getAttribute('href');
+            if(hash && hash.startsWith('#') && hash !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if(target) target.scrollIntoView({behavior: 'smooth'});
+            }
+        });
+    });
+    
+    // Smooth scroll for desktop navigation
+    const desktopLinks = document.querySelectorAll('.desktop-nav a, .btn-outline');
+    desktopLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             const hash = this.getAttribute('href');
             if(hash && hash.startsWith('#') && hash !== '#') {
                 e.preventDefault();
@@ -713,6 +922,13 @@
             form.reset();
         });
     }
+    
+    // Handle window resize to close mobile menu if screen becomes desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 900) {
+            closeSidebar();
+        }
+    });
 </script>
 </body>
 </html>
