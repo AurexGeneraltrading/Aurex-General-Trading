@@ -717,7 +717,7 @@
 
             .product-grid {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 gap: 28px;
             }
 
@@ -855,34 +855,42 @@
         </div>
     </div>
 
-    <!-- ===== MATERIAL SHOWCASE ===== -->
+    <!-- ===== MATERIAL SHOWCASE (4 Items) ===== -->
     <div class="container" id="materials">
         <div class="section-title" style="font-size: 1.5rem;">Featured <span class="highlight">Materials</span></div>
         <div class="section-sub">Quality materials sourced from trusted manufacturers</div>
         <div class="product-grid">
+            <!-- 1. INTERIOR MATERIALS -->
             <div class="product-card">
                 <div class="image-wrap">
-                    <!-- Replace src with your Interior image -->
                     <img src="interior-materials.jpg" alt="Interior Materials" onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600'">
                     <span class="overlay-tag">Interiors</span>
                 </div>
                 <p>🏛️ <span>Interior Materials</span> — Acoustics, Finishes, Fit-out</p>
             </div>
+            <!-- 2. LIGHTING MATERIALS -->
             <div class="product-card">
                 <div class="image-wrap">
-                    <!-- Replace src with your Lighting image -->
                     <img src="lighting-materials.jpg" alt="Lighting Materials" onerror="this.src='https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600'">
                     <span class="overlay-tag">Lighting</span>
                 </div>
                 <p>💡 <span>Lighting Materials</span> — LED, DMX, Architectural</p>
             </div>
+            <!-- 3. AUDIO MATERIALS -->
             <div class="product-card">
                 <div class="image-wrap">
-                    <!-- Replace src with your Audio image -->
                     <img src="audio-materials.jpg" alt="Audio Materials" onerror="this.src='https://images.unsplash.com/photo-1598387846142-5d6a0c0c9b1a?w=600'">
                     <span class="overlay-tag">Audio</span>
                 </div>
                 <p>🔊 <span>Audio Materials</span> — Speakers, Amps, Cables</p>
+            </div>
+            <!-- 4. LED SCREEN MATERIALS -->
+            <div class="product-card">
+                <div class="image-wrap">
+                    <img src="led-screen-materials.jpg" alt="LED Screen Materials" onerror="this.src='https://images.unsplash.com/photo-1540574167326-75c4b0ac0d2a?w=600'">
+                    <span class="overlay-tag">LED Screens</span>
+                </div>
+                <p>🖥️ <span>LED Screen Materials</span> — Video Walls, Panels, Controllers</p>
             </div>
         </div>
     </div>
@@ -937,6 +945,12 @@
                 <p>Professional audio components including speakers, amplifiers, mixers, and full system installation.</p>
             </div>
             <div class="service-card">
+                <span class="service-icon">🖥️</span>
+                <span class="badge-service">led</span>
+                <h4>LED Screen Supply &amp; Installation</h4>
+                <p>LED video walls, digital displays, panels, controllers, and professional installation services.</p>
+            </div>
+            <div class="service-card">
                 <span class="service-icon">🏛️</span>
                 <span class="badge-service">interiors</span>
                 <h4>Interior Supply &amp; Installation</h4>
@@ -954,8 +968,135 @@
                 <h4>Custom Sourcing &amp; Installation</h4>
                 <p>Tailored solutions for unique project requirements across different industries and applications.</p>
             </div>
-            <div class="service-card">
-                <span class="service-icon">🔄</span>
-                <span class="badge-service">support</span>
-                <h4>Post-Installation Support</h4>
-                <p>Technical support, maintenance, and troubleshooting
+        </div>
+    </div>
+
+    <!-- ===== WE SERVE ===== -->
+    <div class="container">
+        <div class="connecting-section">
+            <div class="section-title" style="margin-bottom: 8px;">We <span class="highlight">Serve</span></div>
+            <div class="serve-tags">
+                <span>CONTRACTORS</span><span class="dot">•</span>
+                <span>DESIGNERS</span><span class="dot">•</span>
+                <span>PUBS &amp; BARS</span><span class="dot">•</span>
+                <span>NIGHTCLUBS</span><span class="dot">•</span>
+                <span>HOTELS</span><span class="dot">•</span>
+                <span>RESTAURANTS</span><span class="dot">•</span>
+                <span>EVENTS</span><span class="dot">•</span>
+                <span>ENTERTAINMENT VENUES</span><span class="dot">•</span>
+                <span>COMMERCIAL &amp; RESIDENTIAL</span>
+            </div>
+            <p><strong style="color: var(--accent);">📍 Strategic hub:</strong> UAE — supplying premium materials and installation services across the region.</p>
+            <p style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">
+                📞 +971 542 528 907 &nbsp;|&nbsp; ✉️ sales@aurexgeneraltrading.com
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== CONTACT ===== -->
+    <div class="container" id="contact">
+        <div class="section-title">Get in <span class="highlight">Touch</span></div>
+        <div class="section-sub">Let's discuss your material and installation requirements</div>
+        <div class="contact-row">
+            <div class="card-bg" style="padding: 32px 28px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 20px; color: var(--accent);">Request a Quote</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address *" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your material and installation requirements *" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit →</button>
+                </form>
+            </div>
+            <div class="contact-details">
+                <h3 style="color: var(--accent); margin-bottom: 20px; font-size: 1.2rem;">Contact Information</h3>
+                <div class="contact-info">
+                    <p><strong>📧 Email:</strong> sales@aurexgeneraltrading.com</p>
+                    <p><strong>📞 Phone:</strong> +971 542528907</p>
+                    <p><strong>📍 Office:</strong> CWS-1V-224656</p>
+                    <p><strong>🏢 Address:</strong> 26th Floor, Amber Gem Tower, Ajman, UAE</p>
+                </div>
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-light);">
+                    <p style="color: var(--accent); font-weight: 600; font-size: 0.95rem;">🌐 www.aurexgeneraltrading.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="info-box">
+            <p><strong>✔️ Premium Quality</strong> &nbsp;|&nbsp; <strong>✔️ Reliable Supply</strong> &nbsp;|&nbsp; <strong>✔️ Professional Installation</strong> &nbsp;|&nbsp; <strong>✔️ Expert Support</strong></p>
+        </div>
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>© 2026 Aurex General Trading FZE LLC</div>
+            <div>📍 Ajman, UAE | <span class="gold">✦</span> Supply &amp; Installation</div>
+            <div><span class="gold">✦</span> Supply. Install. Deliver. Support.</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const overlay = document.getElementById('overlay');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    
+    function openSidebar() {
+        mobileSidebar.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeSidebar() {
+        mobileSidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    mobileMenuBtn?.addEventListener('click', openSidebar);
+    closeSidebarBtn?.addEventListener('click', closeSidebar);
+    overlay?.addEventListener('click', closeSidebar);
+    
+    document.querySelectorAll('.mobile-sidebar a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            closeSidebar();
+            const hash = this.getAttribute('href');
+            if(hash && hash.startsWith('#') && hash !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if(target) target.scrollIntoView({behavior: 'smooth'});
+            }
+        });
+    });
+    
+    document.querySelectorAll('.desktop-nav a, .btn-outline').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if(hash && hash.startsWith('#') && hash !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if(target) target.scrollIntoView({behavior: 'smooth'});
+            }
+        });
+    });
+    
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you! Aurex team will reach out shortly.');
+        this.reset();
+    });
+    
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) closeSidebar();
+    });
+</script>
+</body>
+</html>
