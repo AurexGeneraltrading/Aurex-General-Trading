@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Aurex General Trading | Global Trade & Supply Chain Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <title>Aurex General Trading | Audio Video Lighting & Interiors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,8 +14,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #1a2c3e;
+            background-color: #0b0b0f;
+            color: #f0f0f0;
             line-height: 1.5;
             scroll-behavior: smooth;
             overflow-x: hidden;
@@ -33,26 +33,35 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            background: white;
-            border-bottom: 1px solid #eef2f5;
+            padding: 14px 20px;
+            background: rgba(11, 11, 15, 0.95);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         .logo img {
-            height: 50px;
+            height: 44px;
             width: auto;
             object-fit: contain;
         }
 
-        /* Mobile Menu Button - Hidden on Desktop */
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f5c518;
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            color: #ffffff;
+            font-weight: 300;
+        }
+
         .mobile-menu-btn {
-            background: #f5f7f6;
-            border: none;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,215,0,0.2);
             cursor: pointer;
             padding: 10px;
             z-index: 1001;
@@ -70,17 +79,15 @@
             display: block;
             width: 22px;
             height: 2.5px;
-            background-color: #1f4e3c;
+            background-color: #f5c518;
             transition: 0.3s;
             border-radius: 3px;
         }
 
-        /* Desktop Navigation - Hidden on Mobile */
         .desktop-nav {
             display: none;
         }
 
-        /* Mobile Sidebar */
         .mobile-sidebar {
             position: fixed;
             top: 0;
@@ -88,12 +95,13 @@
             width: 85%;
             max-width: 300px;
             height: 100vh;
-            background: linear-gradient(135deg, #1f4e3c 0%, #143a2c 100%);
-            box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+            box-shadow: -5px 0 30px rgba(0,0,0,0.7);
             z-index: 1002;
             transition: right 0.3s ease;
             padding: 70px 25px 30px;
             overflow-y: auto;
+            border-left: 1px solid rgba(245, 197, 24, 0.15);
         }
 
         .mobile-sidebar.active {
@@ -102,23 +110,23 @@
 
         .mobile-sidebar a {
             display: block;
-            color: white;
+            color: #eaeaea;
             text-decoration: none;
             padding: 16px 0;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 500;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
             transition: 0.2s;
         }
 
         .mobile-sidebar a:active {
-            color: #e0ac2c;
+            color: #f5c518;
             padding-left: 10px;
         }
 
         .mobile-sidebar .mobile-quote-btn {
-            background: #e0ac2c;
-            color: #1f4e3c;
+            background: #f5c518;
+            color: #0b0b0f;
             text-align: center;
             border-radius: 30px;
             margin-top: 25px;
@@ -131,9 +139,9 @@
             position: absolute;
             top: 15px;
             right: 20px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
             border: none;
-            color: white;
+            color: #f5c518;
             font-size: 28px;
             cursor: pointer;
             width: 40px;
@@ -150,7 +158,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             z-index: 1001;
             display: none;
         }
@@ -161,47 +169,97 @@
 
         /* Hero Section - Mobile */
         .hero {
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #fef9ef 0%, #ffffff 100%);
+            padding: 50px 20px 60px;
+            background: linear-gradient(160deg, #0b0b0f 0%, #14141f 50%, #0f0f1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(245,197,24,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .hero-badge {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #e0ac2c;
+            letter-spacing: 3px;
+            color: #f5c518;
             font-weight: 600;
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero-badge::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: #f5c518;
+            display: inline-block;
         }
 
         .hero h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            color: #1f3b2c;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        .hero h2 .highlight {
+            color: #f5c518;
         }
 
         .hero p {
             font-size: 0.95rem;
-            color: #2c3e44;
+            color: #b0b0c0;
             margin-bottom: 25px;
-            line-height: 1.5;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .hero-tagline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            margin-bottom: 28px;
+        }
+        .hero-tagline span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #f5c518;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: rgba(245,197,24,0.08);
+            padding: 4px 14px;
+            border-radius: 30px;
+            border: 1px solid rgba(245,197,24,0.15);
         }
 
         .btn-primary {
-            background: #1f4e3c;
-            color: white;
+            background: #f5c518;
+            color: #0b0b0f;
             border: none;
-            padding: 14px 28px;
-            font-weight: 600;
+            padding: 14px 32px;
+            font-weight: 700;
             border-radius: 40px;
             font-size: 0.95rem;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.25s;
             width: 100%;
-            max-width: 250px;
+            max-width: 260px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(245,197,24,0.2);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(245,197,24,0.35);
         }
 
         /* Sections */
@@ -210,70 +268,73 @@
         }
 
         .section-title {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 700;
-            color: #1f3b2c;
-            margin-bottom: 12px;
+            color: #ffffff;
+            margin-bottom: 8px;
             text-align: center;
+        }
+        .section-title .highlight {
+            color: #f5c518;
         }
 
         .section-sub {
             font-size: 0.9rem;
-            color: #5e727b;
+            color: #8888a0;
             text-align: center;
             margin-bottom: 30px;
         }
 
         /* Sectors Section - Mobile */
         .sectors-section {
-            background: linear-gradient(135deg, #1f4e3c 0%, #143a2c 100%);
+            background: linear-gradient(135deg, #11111e 0%, #0a0a12 100%);
             border-radius: 28px;
             margin: 20px 0;
             padding: 40px 20px;
+            border: 1px solid rgba(255,215,0,0.06);
         }
 
         .sectors-section .section-title {
             color: white;
         }
-
         .sectors-section .section-sub {
-            color: #e0ac2c;
+            color: #f5c518;
         }
 
         .sectors-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
             margin-top: 30px;
         }
 
         .sector-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(6px);
             border-radius: 20px;
-            padding: 25px 20px;
+            padding: 24px 18px;
             text-align: center;
             transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
         }
-
-        .sector-card:active {
-            transform: scale(0.98);
+        .sector-card:hover {
+            border-color: rgba(245,197,24,0.2);
+            background: rgba(245,197,24,0.04);
         }
 
         .sector-icon {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
+            font-size: 2.4rem;
+            margin-bottom: 10px;
         }
 
         .sector-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #e0ac2c;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #f5c518;
         }
 
         .sector-card p {
-            color: #f0f0f0;
+            color: #b0b0c0;
             font-size: 0.85rem;
             line-height: 1.5;
         }
@@ -289,23 +350,31 @@
         .product-card {
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            background: white;
+            background: #14141f;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+        .product-card:hover {
+            border-color: rgba(245,197,24,0.2);
         }
 
         .product-card img {
             width: 100%;
-            height: 250px;
+            height: 220px;
             object-fit: cover;
             display: block;
         }
 
         .product-card p {
-            padding: 15px;
+            padding: 16px;
             font-weight: 600;
             text-align: center;
-            color: #1f4e3c;
+            color: #f0f0f0;
             font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+        .product-card p span {
+            color: #f5c518;
         }
 
         /* About & Mission - Mobile */
@@ -316,85 +385,88 @@
         }
 
         .card-bg {
-            background: #fafbfc;
-            padding: 25px;
+            background: #14141f;
+            padding: 28px 24px;
             border-radius: 24px;
-            border: 1px solid #eef2f0;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .card-bg h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: #1f4e3c;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #f5c518;
         }
 
         .card-bg p {
             font-size: 0.9rem;
-            line-height: 1.5;
-            color: #4a5b64;
+            line-height: 1.6;
+            color: #b0b0c0;
         }
 
         /* Services Grid - Mobile */
         .service-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px;
             margin-top: 20px;
         }
 
         .service-card {
-            background: #ffffff;
-            border: 1px solid #e2eae7;
-            border-radius: 20px;
-            padding: 22px 18px;
-            transition: all 0.3s;
+            background: #14141f;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 18px;
+            padding: 20px 16px;
+            transition: 0.25s;
         }
-
-        .service-card:active {
-            transform: scale(0.98);
+        .service-card:hover {
+            border-color: rgba(245,197,24,0.15);
         }
 
         .service-icon {
-            font-size: 2rem;
-            margin-bottom: 12px;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
         }
 
         .service-card h4 {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            margin-bottom: 8px;
-            color: #1f3b2c;
+            margin-bottom: 6px;
+            color: #ffffff;
         }
 
         .service-card p {
-            color: #4a5b64;
-            font-size: 0.85rem;
+            color: #8888a0;
+            font-size: 0.82rem;
             line-height: 1.4;
         }
 
         .badge-service {
             display: inline-block;
-            background: #e9f3ef;
-            color: #1f4e3c;
+            background: rgba(245,197,24,0.12);
+            color: #f5c518;
             font-weight: 600;
-            font-size: 0.7rem;
-            padding: 4px 12px;
+            font-size: 0.65rem;
+            padding: 3px 12px;
             border-radius: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
         }
 
         /* Connecting Section - Mobile */
         .connecting-section {
-            background: linear-gradient(135deg, #f8f6f0, #ffffff);
+            background: linear-gradient(135deg, #11111e, #0a0a12);
             padding: 35px 25px;
             border-radius: 24px;
             margin: 20px 0;
             text-align: center;
+            border: 1px solid rgba(255,215,0,0.06);
         }
 
         .connecting-section p {
             font-size: 0.9rem;
-            line-height: 1.5;
+            line-height: 1.6;
+            color: #b0b0c0;
         }
 
         /* Contact Section - Mobile */
@@ -405,17 +477,27 @@
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         input, textarea {
             width: 100%;
             padding: 14px 16px;
-            border: 1px solid #cddad4;
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 16px;
             font-family: inherit;
             font-size: 0.9rem;
-            background: #fff;
+            background: #14141f;
+            color: #f0f0f0;
+            transition: 0.2s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #f5c518;
+            background: #1a1a2a;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #666680;
         }
 
         textarea {
@@ -424,60 +506,72 @@
         }
 
         .contact-details {
-            background: #fefcf9;
-            padding: 25px;
+            background: #14141f;
+            padding: 28px 24px;
             border-radius: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .contact-info p {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 12px;
             font-size: 0.9rem;
             flex-wrap: wrap;
+            color: #c0c0d0;
         }
 
         .contact-info strong {
-            color: #1f4e3c;
+            color: #f5c518;
             min-width: 70px;
         }
 
         .info-box {
             margin-top: 30px;
             text-align: center;
-            background: #eef3f0;
+            background: rgba(245,197,24,0.06);
             padding: 20px;
             border-radius: 28px;
+            border: 1px solid rgba(245,197,24,0.08);
         }
 
         .info-box p {
             font-size: 0.85rem;
             font-weight: 500;
+            color: #b0b0c0;
+        }
+        .info-box p strong {
+            color: #f5c518;
         }
 
         footer {
-            background: #0f2a21;
-            color: #d9e3de;
+            background: #08080e;
+            color: #8888a0;
             padding: 30px 20px;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
         }
 
         .footer-inner {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             align-items: center;
             font-size: 0.8rem;
         }
+        .footer-inner .gold {
+            color: #f5c518;
+        }
 
         .preview-note {
-            background: #f3eee3;
+            background: rgba(245,197,24,0.06);
             text-align: center;
             padding: 8px;
             font-size: 0.7rem;
-            color: #856404;
+            color: #f5c518;
+            border-bottom: 1px solid rgba(245,197,24,0.08);
+            letter-spacing: 0.5px;
         }
 
         button, .btn-outline, .btn-primary, .sector-card, .service-card {
@@ -491,150 +585,131 @@
 
         /* ========== DESKTOP STYLES (Above 900px) ========== */
         @media (min-width: 900px) {
-            /* Show Desktop Navigation, Hide Mobile Menu */
             .desktop-nav {
                 display: flex;
-                gap: 32px;
+                gap: 28px;
                 align-items: center;
             }
 
             .desktop-nav a {
                 text-decoration: none;
                 font-weight: 500;
-                color: #1f2e3a;
+                color: #c0c0d0;
                 transition: color 0.2s;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
+                letter-spacing: 0.3px;
             }
 
             .desktop-nav a:hover {
-                color: #e0ac2c;
+                color: #f5c518;
             }
 
             .btn-outline {
-                border: 1.5px solid #e0ac2c;
-                padding: 8px 20px;
+                border: 1.5px solid #f5c518;
+                padding: 8px 22px;
                 border-radius: 40px;
                 background: transparent;
                 font-weight: 600;
-                color: #1f4e3c;
+                color: #f5c518;
                 cursor: pointer;
-                transition: 0.2s;
+                transition: 0.25s;
+                font-size: 0.85rem;
             }
 
             .btn-outline:hover {
-                background: #e0ac2c;
-                color: white;
-                border-color: #e0ac2c;
+                background: #f5c518;
+                color: #0b0b0f;
+                border-color: #f5c518;
             }
 
             .mobile-menu-btn {
                 display: none;
             }
 
-            /* Desktop Hero */
             .hero {
-                padding: 80px 0;
+                padding: 90px 0 100px;
             }
-
             .hero .container {
-                max-width: 1280px;
-                margin: 0 auto;
                 padding: 0 40px;
             }
-
             .hero h2 {
-                font-size: 3rem;
+                font-size: 3.4rem;
                 max-width: 750px;
             }
-
             .hero p {
-                font-size: 1.1rem;
-                max-width: 780px;
+                font-size: 1.05rem;
+                max-width: 650px;
             }
-
             .btn-primary {
                 width: auto;
-                padding: 14px 36px;
+                padding: 14px 40px;
             }
 
-            /* Desktop Sectors Grid */
             .sectors-grid {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 25px;
-                margin-top: 50px;
+                gap: 24px;
+                margin-top: 40px;
             }
-
+            .sector-card {
+                padding: 30px 20px;
+            }
             .sector-card:hover {
-                transform: translateY(-5px);
+                transform: translateY(-6px);
             }
 
-            /* Desktop Product Grid */
             .product-grid {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 25px;
+                gap: 24px;
             }
-
             .product-card:hover {
-                transform: translateY(-5px);
-                transition: transform 0.3s;
+                transform: translateY(-4px);
+                border-color: rgba(245,197,24,0.25);
             }
 
-            /* Desktop About & Mission */
             .two-col-grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
             }
 
-            /* Desktop Services Grid */
             .service-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
+                gap: 24px;
             }
-
             .service-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+                transform: translateY(-4px);
+                border-color: rgba(245,197,24,0.2);
             }
 
-            /* Desktop Contact */
             .contact-row {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
             }
 
-            /* Desktop Connecting Section */
             .connecting-section {
-                padding: 50px;
+                padding: 50px 40px;
             }
-
             .connecting-section p {
                 font-size: 1rem;
             }
 
-            /* Desktop Footer */
             .footer-inner {
                 flex-direction: row;
                 justify-content: space-between;
             }
-
-            /* Desktop Container */
             .container {
                 padding: 0 40px;
             }
-
             section {
                 padding: 80px 0;
             }
-
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
-
             .section-sub {
                 font-size: 1rem;
             }
@@ -645,45 +720,41 @@
             .sectors-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                gap: 18px;
             }
-
             .product-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                gap: 18px;
             }
-
             .service-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                gap: 18px;
             }
         }
     </style>
 </head>
 <body>
 <div class="preview-note">
-    🌍 Aurex General Trading — Your Trusted Global Partner
+    ✦ Aurex — Audio • Video • Lighting • Interiors
 </div>
 
 <!-- Navbar -->
 <div class="navbar">
     <div class="logo">
-        <img src="logo.png" alt="Aurex Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 60%27%3E%3Crect width=%27200%27 height=%2760%27 fill=%27%231f4e3c%27/%3E%3Ctext x=%2710%27 y=%2725%27 font-family=%27Arial%27 font-size=%2712%27 fill=%27%23e0ac2c%27 font-weight=%27bold%27%3EAUREX%3C/text%3E%3Ctext x=%2710%27 y=%2740%27 font-family=%27Arial%27 font-size=%277%27 fill=%27white%27%3EGENERAL TRADING%3C/text%3E%3C/svg%3E'">
+        <div class="logo-text">Aurex <span>General Trading</span></div>
     </div>
     
-    <!-- Desktop Navigation -->
     <div class="desktop-nav">
         <a href="#">Home</a>
-        <a href="#sectors">Sectors</a>
-        <a href="#services">Our Services</a>
-        <a href="#about">About Aurex</a>
+        <a href="#sectors">Solutions</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
     </div>
     
-    <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" id="mobileMenuBtn">
         <span></span>
         <span></span>
@@ -695,7 +766,7 @@
 <div class="mobile-sidebar" id="mobileSidebar">
     <button class="close-sidebar" id="closeSidebarBtn">&times;</button>
     <a href="#">Home</a>
-    <a href="#sectors">Sectors We Deal</a>
+    <a href="#sectors">Solutions</a>
     <a href="#services">Our Services</a>
     <a href="#about">About Aurex</a>
     <a href="#contact">Contact</a>
@@ -707,63 +778,69 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <div class="hero-badge">✦ Your gateway to global trade</div>
-            <h2>Connecting markets, building futures</h2>
-            <p>Aurex General Trading, based in Ajman, UAE, is a trusted partner in global import and export solutions. We specialize in the supply and distribution of <strong>building materials, construction tools, safety equipment, and industrial essentials</strong>.</p>
-            <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore Our Sectors →</button>
+            <div class="hero-badge">WE LIGHT. WE SOUND. WE CREATE.</div>
+            <h2>Transforming Spaces Through <br><span class="highlight">Audio, Video, Lighting</span> & Interiors</h2>
+            <p>Aurex delivers end-to-end solutions in lighting, sound, LED screens, and programming LED systems for spaces that leave a lasting impression.</p>
+            <div class="hero-tagline">
+                <span>✦ INNOVATE</span>
+                <span>✦ DESIGN</span>
+                <span>✦ INSTALL</span>
+                <span>✦ INSPIRE</span>
+            </div>
+            <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore Our Solutions →</button>
         </div>
     </div>
     
-    <!-- Sectors We Deal -->
+    <!-- SECTORS / SOLUTIONS (UPDATED) -->
     <div class="container" id="sectors">
         <div class="sectors-section">
-            <div class="section-title">Sectors We Deal</div>
-            <div class="section-sub">Premium quality products for every industry need</div>
+            <div class="section-title">Our <span class="highlight">Core Solutions</span></div>
+            <div class="section-sub">Innovative audio, video, lighting & interior solutions for every space</div>
             
             <div class="sectors-grid">
                 <div class="sector-card">
-                    <div class="sector-icon">🏗️</div>
-                    <h3>Industrial Tools</h3>
-                    <p>Heavy-duty industrial tools, DEWALT power tools, hand tools, and precision equipment for professional use</p>
+                    <div class="sector-icon">💡</div>
+                    <h3>Lighting Systems</h3>
+                    <p>Architectural, decorative & entertainment lighting. DMX, LED pixel mapping, and smart control.</p>
                 </div>
                 <div class="sector-card">
-                    <div class="sector-icon">🏢</div>
-                    <h3>Building Materials</h3>
-                    <p>High-quality building materials, aggregates, and construction essentials</p>
+                    <div class="sector-icon">🔊</div>
+                    <h3>Audio & Sound</h3>
+                    <p>Professional audio system supply, installation, sound design & acoustic integration.</p>
                 </div>
                 <div class="sector-card">
-                    <div class="sector-icon">⚡</div>
-                    <h3>Electrical Equipments</h3>
-                    <p>Complete range of electrical components, multimeters, wiring, switches, panels, and industrial electrical solutions</p>
+                    <div class="sector-icon">🖥️</div>
+                    <h3>LED Screens & Video</h3>
+                    <p>LED video walls, digital displays, and screen installation for venues & events.</p>
                 </div>
                 <div class="sector-card">
-                    <div class="sector-icon">🛡️</div>
-                    <h3>Industrial Safety Equipment</h3>
-                    <p>PPE, safety gear, helmets, gloves, and workplace safety solutions</p>
+                    <div class="sector-icon">🎨</div>
+                    <h3>Interiors & Acoustics</h3>
+                    <p>Interior fit-out, bar/pub/club concepts, acoustic soundproofing & treatment.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Product Range Images - Using Your Custom Images -->
+    <!-- Product Range / Visual Showcase -->
     <div class="container">
-        <div class="section-title" style="font-size: 1.4rem;">Our Premium Product Range</div>
+        <div class="section-title" style="font-size: 1.4rem;">What <span class="highlight">We Deliver</span></div>
         <div class="product-grid">
             <div class="product-card">
-                <img src="Building Materials.jpg" alt="Building Materials" onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600'">
-                <p>Building Materials & Aggregates</p>
+                <img src="lighting-solution.jpg" alt="Lighting Solutions" onerror="this.src='https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600'">
+                <p>💡 <span>Lighting</span> — Architectural & Stage</p>
             </div>
             <div class="product-card">
-                <img src="Industrial Tools & equipments.jpg" alt="Industrial Tools" onerror="this.src='https://images.unsplash.com/photo-1581092335871-4f5d4f0ca8bf?w=600'">
-                <p>Industrial Tools & DEWALT Equipment</p>
+                <img src="audio-system.jpg" alt="Audio Systems" onerror="this.src='https://images.unsplash.com/photo-1598387846142-5d6a0c0c9b1a?w=600'">
+                <p>🔊 <span>Audio</span> — Professional Sound Systems</p>
             </div>
             <div class="product-card">
-                <img src="Electrical equipment image.jpg" alt="Electrical Equipment" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a26c7?w=600'">
-                <p>Electrical Components & Multimeters</p>
+                <img src="led-screen.jpg" alt="LED Screens" onerror="this.src='https://images.unsplash.com/photo-1540574167326-75c4b0ac0d2a?w=600'">
+                <p>🖥️ <span>LED</span> — Video Walls & Digital Displays</p>
             </div>
             <div class="product-card">
-                <img src="Safety Equipment.jpg" alt="Safety Equipment" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600'">
-                <p>Safety Equipment & PPE</p>
+                <img src="interior-acoustic.jpg" alt="Interiors & Acoustics" onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600'">
+                <p>🎨 <span>Interiors</span> — Acoustics & Fit-out</p>
             </div>
         </div>
     </div>
@@ -772,51 +849,64 @@
     <div class="container" id="about">
         <div class="two-col-grid">
             <div class="card-bg">
-                <h3>About Aurex Trading</h3>
-                <p>Aurex General Trading is a dynamic trading and export company based in the heart of Dubai, UAE, specializing in building materials, construction tools, safety equipment, and industrial supplies. We are committed to delivering high-quality products and fostering strong global connections.</p>
+                <h3>About Aurex</h3>
+                <p>Aurex General Trading FZE LLC is a premier provider of integrated audio, video, lighting, and interior solutions based in the UAE. We specialize in transforming commercial, hospitality, and entertainment spaces with cutting-edge technology and innovative design.</p>
             </div>
             <div class="card-bg">
                 <h3>Our Mission</h3>
-                <p>To simplify international trade by delivering reliable solutions with exceptional service, efficient sourcing, timely delivery, and competitive pricing, while maintaining the highest standards of quality and transparency.</p>
+                <p>To deliver immersive experiences through premium quality lighting, sound, and interior solutions. We combine technical expertise with creative design to bring every space to life — from nightclubs and hotels to corporate offices and residential villas.</p>
             </div>
         </div>
     </div>
 
-    <!-- Export Solutions -->
+    <!-- SERVICES (expanded, aligned with business activity) -->
     <div class="container" id="services">
-        <div class="section-title">Export Solutions</div>
-        <div class="section-sub">Empowering global trade with reliable supply chains</div>
+        <div class="section-title">Our <span class="highlight">Expert Services</span></div>
+        <div class="section-sub">End-to-end solutions from design to installation and support</div>
         <div class="service-grid">
-            <div class="service-card"><div class="service-icon">🏭</div><span class="badge-service">wholesale</span><h4>Wholesale Supply</h4><p>Bulk supply of tools, electrical equipment, safety gear, and building materials</p></div>
-            <div class="service-card"><div class="service-icon">🌍</div><span class="badge-service">worldwide</span><h4>Export Services</h4><p>Exporting to GCC countries and international markets with reliable logistics</p></div>
-            <div class="service-card"><div class="service-icon">🛠️</div><span class="badge-service">range</span><h4>Wide Product Range</h4><p>Hand tools, DEWALT power tools, electrical components, PPE, and construction materials</p></div>
-            <div class="service-card"><div class="service-icon">🔍</div><span class="badge-service">sourcing</span><h4>Sourcing & Procurement</h4><p>Assisting clients in sourcing specific products from trusted manufacturers</p></div>
-            <div class="service-card"><div class="service-icon">⚙️</div><span class="badge-service">optimization</span><h4>Supply Chain Optimization</h4><p>Reducing costs and improving efficiency in global trade</p></div>
-            <div class="service-card"><div class="service-icon">📦</div><span class="badge-service">bulk orders</span><h4>Bulk Order Fulfillment</h4><p>Efficient handling of large-volume orders with competitive pricing</p></div>
-            <div class="service-card"><div class="service-icon">✅</div><span class="badge-service">quality</span><h4>Quality Assurance</h4><p>Ensuring all products meet industry standards from certified suppliers</p></div>
-            <div class="service-card"><div class="service-icon">⚠️</div><span class="badge-service">risk</span><h4>Risk Management</h4><p>Comprehensive assessment covering currency fluctuations and logistics</p></div>
-            <div class="service-card"><div class="service-icon">🚢</div><span class="badge-service">logistics</span><h4>Logistics & Shipping</h4><p>Smooth transportation, export documentation, and shipment tracking</p></div>
-            <div class="service-card"><div class="service-icon">🎯</div><span class="badge-service">customized</span><h4>Customized Solutions</h4><p>Tailored procurement strategies across different industries</p></div>
-            <div class="service-card"><div class="service-icon">🤝</div><span class="badge-service">network</span><h4>Strong Supplier Network</h4><p>Partnerships with reputable manufacturers for consistent availability</p></div>
-            <div class="service-card"><div class="service-icon">💬</div><span class="badge-service">support</span><h4>Customer Support</h4><p>Responsive service and post-delivery support for client satisfaction</p></div>
+            <div class="service-card"><div class="service-icon">🎛️</div><span class="badge-service">programming</span><h4>MADRIX LED Programming</h4><p>Advanced pixel mapping, controller setup, and dynamic lighting effects.</p></div>
+            <div class="service-card"><div class="service-icon">💡</div><span class="badge-service">lighting</span><h4>DMX Lighting Installation</h4><p>Full commissioning of DMX lighting systems for clubs, stages, and venues.</p></div>
+            <div class="service-card"><div class="service-icon">🖥️</div><span class="badge-service">video</span><h4>LED Video Wall Installation</h4><p>Supply and installation of LED screens, video walls, and digital displays.</p></div>
+            <div class="service-card"><div class="service-icon">🔊</div><span class="badge-service">audio</span><h4>Professional Audio Systems</h4><p>Supply, design, and integration of high-performance sound systems.</p></div>
+            <div class="service-card"><div class="service-icon">🧱</div><span class="badge-service">acoustics</span><h4>Acoustic Soundproofing</h4><p>Soundproofing solutions, studio treatment, and noise control for venues.</p></div>
+            <div class="service-card"><div class="service-icon">🏢</div><span class="badge-service">interiors</span><h4>Interior Fit-out & Design</h4><p>Complete interior concepts for bars, pubs, clubs, hotels, and restaurants.</p></div>
+            <div class="service-card"><div class="service-icon">🎪</div><span class="badge-service">events</span><h4>Event AV Solutions</h4><p>Comprehensive AV support for events, shows, and corporate functions.</p></div>
+            <div class="service-card"><div class="service-icon">🔧</div><span class="badge-service">support</span><h4>Testing & Troubleshooting</h4><p>Technical support, diagnostics, and on-site maintenance for all systems.</p></div>
+            <div class="service-card"><div class="service-icon">🎯</div><span class="badge-service">custom</span><h4>Custom Design & Integration</h4><p>Tailored solutions for unique spaces, blending technology with aesthetics.</p></div>
         </div>
     </div>
 
-    <!-- Connecting Markets -->
+    <!-- Connecting / We Serve -->
     <div class="container">
         <div class="connecting-section">
-            <div class="section-title" style="margin-bottom: 15px;">Connecting markets,<br>building futures</div>
-            <p>At Aurex General Trading, we leverage our strategic location in Dubai and extensive network to provide unparalleled trading and export services. We are dedicated to delivering excellence and fostering long-term partnerships that drive mutual growth.</p>
-            <p style="margin-top: 15px;"><strong>📍 Strategic hub:</strong> UAE — bridging East & West trade routes.</p>
+            <div class="section-title" style="margin-bottom: 10px;">We <span class="highlight">Serve</span></div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; margin: 15px 0 20px;">
+                <span style="color:#f5c518; font-weight:600;">PUBS</span>
+                <span style="color:#c0c0d0;">•</span>
+                <span style="color:#f5c518; font-weight:600;">BARS</span>
+                <span style="color:#c0c0d0;">•</span>
+                <span style="color:#f5c518; font-weight:600;">NIGHTCLUBS</span>
+                <span style="color:#c0c0d0;">•</span>
+                <span style="color:#f5c518; font-weight:600;">HOTELS</span>
+                <span style="color:#c0c0d0;">•</span>
+                <span style="color:#f5c518; font-weight:600;">RESTAURANTS</span>
+                <span style="color:#c0c0d0;">•</span>
+                <span style="color:#f5c518; font-weight:600;">EVENTS</span>
+                <span style="color:#c0c0d0;">•</span>
+                <span style="color:#f5c518; font-weight:600;">ENTERTAINMENT VENUES</span>
+                <span style="color:#c0c0d0;">•</span>
+                <span style="color:#f5c518; font-weight:600;">COMMERCIAL & RESIDENTIAL</span>
+            </div>
+            <p style="margin-top: 10px;"><strong style="color:#f5c518;">📍 Strategic hub:</strong> UAE — delivering world-class AVL & interior solutions across the region.</p>
         </div>
     </div>
 
     <!-- Contact Section -->
     <div class="container" id="contact">
-        <div class="section-title">Get in touch</div>
+        <div class="section-title">Get in <span class="highlight">Touch</span></div>
         <div class="contact-row">
-            <div class="card-bg" style="padding: 25px;">
-                <h3 style="font-size: 1.3rem; margin-bottom: 20px;">Request a quote</h3>
+            <div class="card-bg" style="padding: 28px 24px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 20px; color:#f5c518;">Request a Quote</h3>
                 <form id="contactForm">
                     <div class="form-group">
                         <input type="text" placeholder="Name *" required>
@@ -825,23 +915,26 @@
                         <input type="email" placeholder="Email address *" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Message *" required></textarea>
+                        <textarea placeholder="Tell us about your project *" required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Submit form →</button>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit →</button>
                 </form>
             </div>
             <div class="contact-details">
-                <h3 style="color:#1f4e3c; margin-bottom: 20px; font-size: 1.3rem;">Contact Information</h3>
+                <h3 style="color:#f5c518; margin-bottom: 20px; font-size: 1.2rem;">Contact Information</h3>
                 <div class="contact-info">
                     <p><strong>📧 Email:</strong> sales@aurexgeneraltrading.com</p>
                     <p><strong>📞 Phone:</strong> +971 542528907</p>
                     <p><strong>📍 Office:</strong> CWS-1V-224656</p>
                     <p><strong>🏢 Address:</strong> 26th Floor, Amber Gem Tower, Ajman, UAE</p>
                 </div>
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05);">
+                    <p style="color:#f5c518; font-weight:600; font-size:0.9rem;">🌐 www.aurexgeneraltrading.com</p>
+                </div>
             </div>
         </div>
         <div class="info-box">
-            <p>✔️ 24/7 customer support | ✔️ Trusted by GCC contractors | ✔️ Full documentation & compliance</p>
+            <p><strong>✔️ Expert Team</strong> &nbsp;|&nbsp; <strong>✔️ Premium Quality</strong> &nbsp;|&nbsp; <strong>✔️ Innovative Solutions</strong> &nbsp;|&nbsp; <strong>✔️ Reliable Support</strong></p>
         </div>
     </div>
 </main>
@@ -850,84 +943,5 @@
     <div class="container">
         <div class="footer-inner">
             <div>© 2026 Aurex General Trading FZE LLC</div>
-            <div>📍 Ajman, UAE | Global trade solutions</div>
-            <div><span style="color:#e0ac2c;">✦</span> Integrity & Innovation</div>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Mobile Menu Functionality
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileSidebar = document.getElementById('mobileSidebar');
-    const overlay = document.getElementById('overlay');
-    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
-    
-    function openSidebar() {
-        mobileSidebar.classList.add('active');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeSidebar() {
-        mobileSidebar.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', openSidebar);
-    }
-    if (closeSidebarBtn) {
-        closeSidebarBtn.addEventListener('click', closeSidebar);
-    }
-    if (overlay) {
-        overlay.addEventListener('click', closeSidebar);
-    }
-    
-    // Close sidebar on link click (mobile only)
-    const mobileLinks = document.querySelectorAll('.mobile-sidebar a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            closeSidebar();
-            const hash = this.getAttribute('href');
-            if(hash && hash.startsWith('#') && hash !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(hash);
-                if(target) target.scrollIntoView({behavior: 'smooth'});
-            }
-        });
-    });
-    
-    // Smooth scroll for desktop navigation
-    const desktopLinks = document.querySelectorAll('.desktop-nav a, .btn-outline');
-    desktopLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const hash = this.getAttribute('href');
-            if(hash && hash.startsWith('#') && hash !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(hash);
-                if(target) target.scrollIntoView({behavior: 'smooth'});
-            }
-        });
-    });
-    
-    // Form submission
-    const form = document.getElementById('contactForm');
-    if(form) {
-        form.addEventListener('submit', function(e){
-            e.preventDefault();
-            alert('Thank you! Aurex team will reach out shortly.');
-            form.reset();
-        });
-    }
-    
-    // Handle window resize to close mobile menu if screen becomes desktop
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 900) {
-            closeSidebar();
-        }
-    });
-</script>
-</body>
-</html>
+            <div>📍 Ajman, UAE | <span class="gold">✦</span> Audio • Video • Lighting • Interiors</div>
+            <div><span class
