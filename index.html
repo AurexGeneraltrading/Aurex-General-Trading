@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Aurex General Trading | Material Supply for AVL & Interiors</title>
+    <title>Aurex General Trading | Material Supply & Installation</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -14,17 +14,19 @@
         }
 
         :root {
-            --bg-primary: #0a0a12;
-            --bg-secondary: #12121f;
-            --bg-card: #1a1a2e;
-            --accent: #d4a843;
-            --accent-light: #e8d5a3;
-            --accent-dark: #b8922e;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b8b8d0;
-            --text-muted: #6a6a82;
-            --border-glow: rgba(212, 168, 67, 0.15);
-            --shadow-glow: rgba(212, 168, 67, 0.08);
+            --bg-primary: #f5f3f0;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-accent: #f0ece6;
+            --accent: #b8942e;
+            --accent-light: #d4b87a;
+            --accent-dark: #9a7a25;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #888888;
+            --border-light: rgba(184, 148, 46, 0.15);
+            --shadow-light: rgba(0,0,0,0.05);
+            --shadow-medium: rgba(0,0,0,0.08);
         }
 
         body {
@@ -49,12 +51,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 14px 24px;
-            background: rgba(10, 10, 18, 0.95);
-            border-bottom: 1px solid var(--border-glow);
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border-light);
             position: sticky;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(16px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04);
         }
 
         .logo img {
@@ -62,12 +65,11 @@
             width: auto;
             object-fit: contain;
             display: block;
-            filter: brightness(1.1);
         }
 
         .mobile-menu-btn {
-            background: rgba(212, 168, 67, 0.08);
-            border: 1px solid var(--border-glow);
+            background: var(--bg-accent);
+            border: 1px solid var(--border-light);
             cursor: pointer;
             padding: 10px;
             z-index: 1001;
@@ -81,7 +83,7 @@
             gap: 5px;
             transition: 0.3s;
         }
-        .mobile-menu-btn:hover { background: rgba(212, 168, 67, 0.15); }
+        .mobile-menu-btn:hover { background: rgba(184, 148, 46, 0.08); }
         .mobile-menu-btn span {
             display: block;
             width: 22px;
@@ -100,13 +102,13 @@
             width: 85%;
             max-width: 320px;
             height: 100vh;
-            background: linear-gradient(135deg, #0a0a12 0%, #1a1a2e 100%);
-            box-shadow: -10px 0 50px rgba(0,0,0,0.8);
+            background: #ffffff;
+            box-shadow: -10px 0 50px rgba(0,0,0,0.1);
             z-index: 1002;
             transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 70px 28px 30px;
             overflow-y: auto;
-            border-left: 1px solid var(--border-glow);
+            border-left: 1px solid var(--border-light);
         }
         .mobile-sidebar.active { right: 0; }
 
@@ -117,7 +119,7 @@
             padding: 16px 0;
             font-size: 1.05rem;
             font-weight: 500;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
             transition: 0.25s;
         }
         .mobile-sidebar a:hover,
@@ -128,7 +130,7 @@
 
         .mobile-sidebar .mobile-quote-btn {
             background: var(--accent);
-            color: var(--bg-primary);
+            color: #ffffff;
             text-align: center;
             border-radius: 30px;
             margin-top: 30px;
@@ -136,13 +138,13 @@
             font-weight: 700;
             border-bottom: none;
         }
-        .mobile-sidebar .mobile-quote-btn:hover { background: var(--accent-light); }
+        .mobile-sidebar .mobile-quote-btn:hover { background: var(--accent-dark); }
 
         .close-sidebar {
             position: absolute;
             top: 15px;
             right: 20px;
-            background: rgba(212, 168, 67, 0.1);
+            background: rgba(184, 148, 46, 0.08);
             border: none;
             color: var(--accent);
             font-size: 28px;
@@ -155,7 +157,7 @@
             justify-content: center;
             transition: 0.3s;
         }
-        .close-sidebar:hover { background: rgba(212, 168, 67, 0.2); }
+        .close-sidebar:hover { background: rgba(184, 148, 46, 0.15); }
 
         .overlay {
             position: fixed;
@@ -163,7 +165,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.3);
             z-index: 1001;
             display: none;
         }
@@ -172,7 +174,7 @@
         /* ========== HERO ========== */
         .hero {
             padding: 60px 20px 80px;
-            background: linear-gradient(165deg, #0a0a12 0%, #141425 40%, #0f0f1a 100%);
+            background: linear-gradient(165deg, #f5f3f0 0%, #ffffff 50%, #f0ece6 100%);
             position: relative;
             overflow: hidden;
         }
@@ -183,7 +185,7 @@
             right: -15%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(212,168,67,0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(184,148,46,0.04) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -194,7 +196,7 @@
             left: -10%;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(212,168,67,0.04) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(184,148,46,0.03) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -224,15 +226,12 @@
             font-size: 2.4rem;
             font-weight: 800;
             line-height: 1.1;
-            color: #ffffff;
+            color: var(--text-primary);
             margin-bottom: 16px;
             letter-spacing: -0.5px;
         }
         .hero h2 .highlight {
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--accent);
         }
 
         .hero p {
@@ -255,15 +254,15 @@
             color: var(--accent);
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            background: rgba(212,168,67,0.06);
+            background: rgba(184,148,46,0.06);
             padding: 6px 18px;
             border-radius: 30px;
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
         }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            color: var(--bg-primary);
+            color: #ffffff;
             border: none;
             padding: 16px 36px;
             font-weight: 700;
@@ -274,12 +273,12 @@
             width: 100%;
             max-width: 260px;
             text-align: center;
-            box-shadow: 0 4px 30px rgba(212,168,67,0.2);
+            box-shadow: 0 4px 30px rgba(184,148,46,0.2);
             letter-spacing: 0.3px;
         }
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 40px rgba(212,168,67,0.35);
+            box-shadow: 0 8px 40px rgba(184,148,46,0.3);
         }
 
         /* ========== SECTIONS ========== */
@@ -288,16 +287,13 @@
         .section-title {
             font-size: 1.9rem;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--text-primary);
             margin-bottom: 8px;
             text-align: center;
             letter-spacing: -0.3px;
         }
         .section-title .highlight {
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--accent);
         }
 
         .section-sub {
@@ -312,11 +308,12 @@
 
         /* ========== SECTORS ========== */
         .sectors-section {
-            background: linear-gradient(135deg, #0f0f1e, #0a0a12);
+            background: var(--bg-secondary);
             border-radius: 32px;
             margin: 20px 0;
             padding: 50px 24px;
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 30px var(--shadow-light);
             position: relative;
             overflow: hidden;
         }
@@ -331,31 +328,19 @@
         }
 
         .sector-card {
-            background: rgba(255,255,255,0.02);
-            backdrop-filter: blur(8px);
+            background: var(--bg-primary);
             border-radius: 24px;
             padding: 30px 24px;
             text-align: center;
             transition: all 0.4s;
-            border: 1px solid rgba(255,255,255,0.04);
+            border: 1px solid var(--border-light);
             position: relative;
             overflow: hidden;
         }
-        .sector-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(212,168,67,0.03), transparent);
-            opacity: 0;
-            transition: 0.4s;
-        }
-        .sector-card:hover::before { opacity: 1; }
         .sector-card:hover {
-            border-color: rgba(212,168,67,0.2);
+            border-color: var(--accent);
             transform: translateY(-4px);
+            box-shadow: 0 8px 30px var(--shadow-medium);
         }
 
         .sector-icon {
@@ -389,20 +374,22 @@
             border-radius: 24px;
             overflow: hidden;
             background: var(--bg-card);
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
             transition: all 0.4s;
             position: relative;
+            box-shadow: 0 2px 20px var(--shadow-light);
         }
         .product-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(212,168,67,0.25);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+            border-color: var(--accent);
+            box-shadow: 0 12px 40px var(--shadow-medium);
         }
 
         .product-card .image-wrap {
             position: relative;
             overflow: hidden;
             height: 240px;
+            background: var(--bg-accent);
         }
         .product-card .image-wrap img {
             width: 100%;
@@ -415,8 +402,8 @@
             position: absolute;
             top: 16px;
             left: 16px;
-            background: rgba(212,168,67,0.92);
-            color: var(--bg-primary);
+            background: var(--accent);
+            color: #ffffff;
             padding: 4px 16px;
             border-radius: 30px;
             font-size: 0.7rem;
@@ -447,10 +434,11 @@
             background: var(--bg-card);
             padding: 32px 28px;
             border-radius: 28px;
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
             transition: 0.3s;
+            box-shadow: 0 2px 20px var(--shadow-light);
         }
-        .card-bg:hover { border-color: rgba(212,168,67,0.15); }
+        .card-bg:hover { border-color: var(--accent); }
 
         .card-bg h3 {
             font-size: 1.3rem;
@@ -465,7 +453,7 @@
             color: var(--text-secondary);
         }
 
-        /* ========== SERVICES (Material Supply Focus) ========== */
+        /* ========== SERVICES ========== */
         .service-grid {
             display: flex;
             flex-direction: column;
@@ -475,16 +463,17 @@
 
         .service-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
             border-radius: 22px;
             padding: 24px 20px;
             transition: all 0.35s;
             position: relative;
+            box-shadow: 0 2px 16px var(--shadow-light);
         }
         .service-card:hover {
-            border-color: rgba(212,168,67,0.2);
+            border-color: var(--accent);
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 30px var(--shadow-medium);
         }
 
         .service-icon {
@@ -497,7 +486,7 @@
             font-size: 1.05rem;
             font-weight: 600;
             margin-bottom: 6px;
-            color: #ffffff;
+            color: var(--text-primary);
         }
 
         .service-card p {
@@ -508,7 +497,7 @@
 
         .badge-service {
             display: inline-block;
-            background: rgba(212,168,67,0.1);
+            background: rgba(184,148,46,0.1);
             color: var(--accent);
             font-weight: 600;
             font-size: 0.65rem;
@@ -517,17 +506,18 @@
             margin-bottom: 10px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            border: 1px solid rgba(212,168,67,0.08);
+            border: 1px solid var(--border-light);
         }
 
         /* ========== CONNECTING ========== */
         .connecting-section {
-            background: linear-gradient(135deg, #0f0f1e, #0a0a12);
+            background: var(--bg-secondary);
             padding: 40px 28px;
             border-radius: 28px;
             margin: 20px 0;
             text-align: center;
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 30px var(--shadow-light);
             position: relative;
             overflow: hidden;
         }
@@ -569,19 +559,19 @@
         input, textarea {
             width: 100%;
             padding: 16px 18px;
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
             border-radius: 18px;
             font-family: inherit;
             font-size: 0.92rem;
-            background: var(--bg-card);
+            background: var(--bg-primary);
             color: var(--text-primary);
             transition: 0.3s;
         }
         input:focus, textarea:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(212,168,67,0.06);
-            background: #1e1e32;
+            box-shadow: 0 0 0 4px rgba(184,148,46,0.06);
+            background: var(--bg-secondary);
         }
         input::placeholder, textarea::placeholder { color: var(--text-muted); }
         textarea { min-height: 110px; resize: vertical; }
@@ -590,7 +580,8 @@
             background: var(--bg-card);
             padding: 32px 28px;
             border-radius: 28px;
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 20px var(--shadow-light);
         }
 
         .contact-info p {
@@ -611,10 +602,10 @@
         .info-box {
             margin-top: 30px;
             text-align: center;
-            background: rgba(212,168,67,0.04);
+            background: rgba(184,148,46,0.04);
             padding: 22px;
             border-radius: 30px;
-            border: 1px solid var(--border-glow);
+            border: 1px solid var(--border-light);
         }
         .info-box p {
             font-size: 0.88rem;
@@ -625,11 +616,11 @@
 
         /* ========== FOOTER ========== */
         footer {
-            background: #06060e;
+            background: #f0ece6;
             color: var(--text-muted);
             padding: 32px 20px;
             text-align: center;
-            border-top: 1px solid var(--border-glow);
+            border-top: 1px solid var(--border-light);
         }
 
         .footer-inner {
@@ -642,12 +633,12 @@
         .footer-inner .gold { color: var(--accent); }
 
         .preview-note {
-            background: rgba(212,168,67,0.04);
+            background: rgba(184,148,46,0.06);
             text-align: center;
             padding: 10px;
             font-size: 0.72rem;
             color: var(--accent);
-            border-bottom: 1px solid var(--border-glow);
+            border-bottom: 1px solid var(--border-light);
             letter-spacing: 0.8px;
             text-transform: uppercase;
         }
@@ -703,9 +694,9 @@
             }
             .btn-outline:hover {
                 background: var(--accent);
-                color: var(--bg-primary);
+                color: #ffffff;
                 border-color: var(--accent);
-                box-shadow: 0 4px 20px rgba(212,168,67,0.2);
+                box-shadow: 0 4px 20px rgba(184,148,46,0.2);
             }
 
             .mobile-menu-btn { display: none; }
@@ -782,13 +773,13 @@
 </head>
 <body>
 <div class="preview-note">
-    ✦ Aurex — Material Supply for Audio • Video • Lighting • Interiors
+    ✦ Aurex — Material Supply & Installation for AVL & Interiors
 </div>
 
 <!-- Navbar -->
 <div class="navbar">
     <div class="logo">
-        <img src="logo.png" alt="Aurex Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 60%27%3E%3Crect width=%27200%27 height=%2760%27 fill=%27%230a0a12%27/%3E%3Ctext x=%2712%27 y=%2726%27 font-family=%27Inter%27 font-size=%2718%27 fill=%27%23d4a843%27 font-weight=%27800%27%3EAUREX%3C/text%3E%3Ctext x=%2712%27 y=%2744%27 font-family=%27Inter%27 font-size=%278%27 fill=%27%23b8b8d0%27%3EGENERAL TRADING%3C/text%3E%3C/svg%3E'">
+        <img src="logo.png" alt="Aurex Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 60%27%3E%3Crect width=%27200%27 height=%2760%27 fill=%27%23f5f3f0%27/%3E%3Ctext x=%2712%27 y=%2726%27 font-family=%27Inter%27 font-size=%2718%27 fill=%27%23b8942e%27 font-weight=%27800%27%3EAUREX%3C/text%3E%3Ctext x=%2712%27 y=%2744%27 font-family=%27Inter%27 font-size=%278%27 fill=%27%234a4a4a%27%3EGENERAL TRADING%3C/text%3E%3C/svg%3E'">
     </div>
     
     <div class="desktop-nav">
@@ -826,44 +817,39 @@
     <section class="hero">
         <div class="container">
             <div class="hero-badge">AUDIO • VIDEO • LIGHTING • INTERIORS</div>
-            <h2>Premium Material Supply for <br><span class="highlight">AVL &amp; Interior Projects</span></h2>
-            <p>Aurex is a trusted supplier of high-quality materials for lighting, sound, LED screens, and interior fit-out projects. We provide reliable sourcing and timely delivery for contractors, designers, and businesses across the UAE and beyond.</p>
+            <h2>Premium Material Supply &amp; <br><span class="highlight">Professional Installation</span></h2>
+            <p>Aurex is a trusted partner for material supply and installation services across the UAE. We provide high-quality materials for lighting, sound, LED screens, and interior projects, backed by expert installation and support.</p>
             <div class="hero-tagline">
                 <span>✦ SUPPLY</span>
-                <span>✦ SOURCE</span>
+                <span>✦ INSTALL</span>
                 <span>✦ DELIVER</span>
                 <span>✦ SUPPORT</span>
             </div>
-            <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore Our Materials →</button>
+            <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore Our Solutions →</button>
         </div>
     </section>
 
-    <!-- ===== SECTORS / MATERIAL CATEGORIES ===== -->
+    <!-- ===== SECTORS / SERVICES OVERVIEW ===== -->
     <div class="container" id="sectors">
         <div class="sectors-section">
-            <div class="section-title">Material <span class="highlight">Supply Categories</span></div>
-            <div class="section-sub">Premium materials for audio, video, lighting, and interior projects</div>
+            <div class="section-title">Our <span class="highlight">Solutions</span></div>
+            <div class="section-sub">Premium materials and professional installation services</div>
             
             <div class="sectors-grid">
                 <div class="sector-card">
                     <span class="sector-icon">💡</span>
-                    <h3>Lighting Materials</h3>
-                    <p>DMX lighting fixtures, LED strips, pixel mapping controllers, architectural lighting, stage lighting, and decorative lighting materials.</p>
+                    <h3>Lighting Solutions</h3>
+                    <p>Supply of DMX lighting fixtures, LED strips, controllers, and architectural lighting. Professional installation and commissioning services.</p>
                 </div>
                 <div class="sector-card">
                     <span class="sector-icon">🔊</span>
-                    <h3>Audio &amp; Sound Materials</h3>
-                    <p>Professional speakers, amplifiers, mixing consoles, microphones, sound processors, cables, and complete audio system components.</p>
-                </div>
-                <div class="sector-card">
-                    <span class="sector-icon">🖥️</span>
-                    <h3>LED &amp; Video Materials</h3>
-                    <p>LED video walls, digital displays, LED panels, controllers, power supplies, and video processing equipment for venues and events.</p>
+                    <h3>Audio &amp; Sound</h3>
+                    <p>Supply of professional speakers, amplifiers, mixers, and sound systems. Expert installation and system integration.</p>
                 </div>
                 <div class="sector-card">
                     <span class="sector-icon">🏛️</span>
-                    <h3>Interior &amp; Acoustic Materials</h3>
-                    <p>Acoustic panels, soundproofing materials, ceiling systems, wall cladding, flooring, joinery materials, and decorative finishes.</p>
+                    <h3>Interiors &amp; Acoustics</h3>
+                    <p>Supply of acoustic panels, soundproofing materials, and interior finishes. Complete installation and fit-out services.</p>
                 </div>
             </div>
         </div>
@@ -876,6 +862,15 @@
         <div class="product-grid">
             <div class="product-card">
                 <div class="image-wrap">
+                    <!-- Replace src with your Interior image -->
+                    <img src="interior-materials.jpg" alt="Interior Materials" onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600'">
+                    <span class="overlay-tag">Interiors</span>
+                </div>
+                <p>🏛️ <span>Interior Materials</span> — Acoustics, Finishes, Fit-out</p>
+            </div>
+            <div class="product-card">
+                <div class="image-wrap">
+                    <!-- Replace src with your Lighting image -->
                     <img src="lighting-materials.jpg" alt="Lighting Materials" onerror="this.src='https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600'">
                     <span class="overlay-tag">Lighting</span>
                 </div>
@@ -883,24 +878,11 @@
             </div>
             <div class="product-card">
                 <div class="image-wrap">
+                    <!-- Replace src with your Audio image -->
                     <img src="audio-materials.jpg" alt="Audio Materials" onerror="this.src='https://images.unsplash.com/photo-1598387846142-5d6a0c0c9b1a?w=600'">
                     <span class="overlay-tag">Audio</span>
                 </div>
                 <p>🔊 <span>Audio Materials</span> — Speakers, Amps, Cables</p>
-            </div>
-            <div class="product-card">
-                <div class="image-wrap">
-                    <img src="led-materials.jpg" alt="LED Materials" onerror="this.src='https://images.unsplash.com/photo-1540574167326-75c4b0ac0d2a?w=600'">
-                    <span class="overlay-tag">LED</span>
-                </div>
-                <p>🖥️ <span>LED Materials</span> — Screens, Panels, Controllers</p>
-            </div>
-            <div class="product-card">
-                <div class="image-wrap">
-                    <img src="interior-materials.jpg" alt="Interior Materials" onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600'">
-                    <span class="overlay-tag">Interiors</span>
-                </div>
-                <p>🏛️ <span>Interior Materials</span> — Acoustics, Finishes, Fit-out</p>
             </div>
         </div>
     </div>
@@ -910,25 +892,31 @@
         <div class="two-col-grid">
             <div class="card-bg">
                 <h3>About Aurex</h3>
-                <p>Aurex General Trading FZE LLC is a premier supplier of materials for audio, video, lighting, and interior projects. Based in the UAE, we serve contractors, designers, and businesses across the region with premium quality products and reliable supply chain solutions.</p>
+                <p>Aurex General Trading FZE LLC is a premier provider of material supply and installation services for audio, video, lighting, and interior projects. Based in the UAE, we serve contractors, designers, and businesses with premium quality materials and expert installation support.</p>
             </div>
             <div class="card-bg">
                 <h3>Our Mission</h3>
-                <p>To provide exceptional material supply solutions that empower creative projects. We combine industry expertise with a global network of manufacturers to deliver the right materials, on time, every time.</p>
+                <p>To deliver exceptional material supply and installation solutions that empower creative projects. We combine industry expertise with a global network to provide the right materials and professional installation, on time, every time.</p>
             </div>
         </div>
     </div>
 
     <!-- ===== SERVICES ===== -->
     <div class="container" id="services">
-        <div class="section-title">Our <span class="highlight">Supply Services</span></div>
-        <div class="section-sub">End-to-end material sourcing and supply solutions</div>
+        <div class="section-title">Our <span class="highlight">Services</span></div>
+        <div class="section-sub">Complete material supply and installation solutions</div>
         <div class="service-grid">
             <div class="service-card">
                 <span class="service-icon">📦</span>
                 <span class="badge-service">supply</span>
-                <h4>Material Sourcing</h4>
-                <p>We source premium materials from trusted manufacturers worldwide for lighting, audio, LED, and interior projects.</p>
+                <h4>Material Sourcing &amp; Supply</h4>
+                <p>We source and supply premium materials from trusted manufacturers worldwide for lighting, audio, LED, and interior projects.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <span class="badge-service">installation</span>
+                <h4>Professional Installation</h4>
+                <p>Expert installation services for lighting systems, audio equipment, LED screens, acoustic panels, and interior fit-outs.</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">🚢</span>
@@ -939,26 +927,20 @@
             <div class="service-card">
                 <span class="service-icon">💡</span>
                 <span class="badge-service">lighting</span>
-                <h4>Lighting Material Supply</h4>
-                <p>Complete range of lighting materials including DMX fixtures, LED strips, controllers, and architectural lighting.</p>
+                <h4>Lighting Supply &amp; Installation</h4>
+                <p>Complete lighting solutions including DMX fixtures, LED strips, controllers, and professional installation.</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">🔊</span>
                 <span class="badge-service">audio</span>
-                <h4>Audio Material Supply</h4>
-                <p>Professional audio components including speakers, amplifiers, mixers, microphones, and sound system accessories.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">🖥️</span>
-                <span class="badge-service">video</span>
-                <h4>LED &amp; Video Material Supply</h4>
-                <p>LED video walls, digital displays, panels, controllers, and video processing equipment for events and venues.</p>
+                <h4>Audio Supply &amp; Installation</h4>
+                <p>Professional audio components including speakers, amplifiers, mixers, and full system installation.</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">🏛️</span>
                 <span class="badge-service">interiors</span>
-                <h4>Interior &amp; Acoustic Material Supply</h4>
-                <p>Acoustic panels, soundproofing, ceiling systems, wall cladding, and decorative interior materials.</p>
+                <h4>Interior Supply &amp; Installation</h4>
+                <p>Acoustic panels, soundproofing, ceiling systems, wall cladding, and complete interior installation services.</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">✅</span>
@@ -967,146 +949,13 @@
                 <p>All materials meet industry standards and are sourced from certified, reliable manufacturers.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">🔧</span>
-                <span class="badge-service">support</span>
-                <h4>Technical Support</h4>
-                <p>Expert guidance on material selection, compatibility, and project requirements for seamless integration.</p>
-            </div>
-            <div class="service-card">
                 <span class="service-icon">🎯</span>
                 <span class="badge-service">custom</span>
-                <h4>Custom Sourcing</h4>
-                <p>Tailored sourcing solutions for unique project requirements across different industries and applications.</p>
+                <h4>Custom Sourcing &amp; Installation</h4>
+                <p>Tailored solutions for unique project requirements across different industries and applications.</p>
             </div>
-        </div>
-    </div>
-
-    <!-- ===== WE SERVE ===== -->
-    <div class="container">
-        <div class="connecting-section">
-            <div class="section-title" style="margin-bottom: 8px;">We <span class="highlight">Serve</span></div>
-            <div class="serve-tags">
-                <span>CONTRACTORS</span><span class="dot">•</span>
-                <span>DESIGNERS</span><span class="dot">•</span>
-                <span>PUBS &amp; BARS</span><span class="dot">•</span>
-                <span>NIGHTCLUBS</span><span class="dot">•</span>
-                <span>HOTELS</span><span class="dot">•</span>
-                <span>RESTAURANTS</span><span class="dot">•</span>
-                <span>EVENTS</span><span class="dot">•</span>
-                <span>ENTERTAINMENT VENUES</span><span class="dot">•</span>
-                <span>COMMERCIAL &amp; RESIDENTIAL</span>
-            </div>
-            <p><strong style="color: var(--accent);">📍 Strategic hub:</strong> UAE — supplying premium materials across the region.</p>
-            <p style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">
-                📞 +971 542 528 907 &nbsp;|&nbsp; ✉️ sales@aurexgeneraltrading.com
-            </p>
-        </div>
-    </div>
-
-    <!-- ===== CONTACT ===== -->
-    <div class="container" id="contact">
-        <div class="section-title">Get in <span class="highlight">Touch</span></div>
-        <div class="section-sub">Let's discuss your material requirements</div>
-        <div class="contact-row">
-            <div class="card-bg" style="padding: 32px 28px;">
-                <h3 style="font-size: 1.2rem; margin-bottom: 20px; color: var(--accent);">Request a Quote</h3>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Full Name *" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address *" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Tell us about your material requirements *" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Submit →</button>
-                </form>
-            </div>
-            <div class="contact-details">
-                <h3 style="color: var(--accent); margin-bottom: 20px; font-size: 1.2rem;">Contact Information</h3>
-                <div class="contact-info">
-                    <p><strong>📧 Email:</strong> sales@aurexgeneraltrading.com</p>
-                    <p><strong>📞 Phone:</strong> +971 542528907</p>
-                    <p><strong>📍 Office:</strong> CWS-1V-224656</p>
-                    <p><strong>🏢 Address:</strong> 26th Floor, Amber Gem Tower, Ajman, UAE</p>
-                </div>
-                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-glow);">
-                    <p style="color: var(--accent); font-weight: 600; font-size: 0.95rem;">🌐 www.aurexgeneraltrading.com</p>
-                </div>
-            </div>
-        </div>
-        <div class="info-box">
-            <p><strong>✔️ Premium Quality</strong> &nbsp;|&nbsp; <strong>✔️ Reliable Supply</strong> &nbsp;|&nbsp; <strong>✔️ Competitive Pricing</strong> &nbsp;|&nbsp; <strong>✔️ Expert Support</strong></p>
-        </div>
-    </div>
-</main>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-    <div class="container">
-        <div class="footer-inner">
-            <div>© 2026 Aurex General Trading FZE LLC</div>
-            <div>📍 Ajman, UAE | <span class="gold">✦</span> Material Supply for AVL &amp; Interiors</div>
-            <div><span class="gold">✦</span> Supply. Source. Deliver. Support.</div>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Mobile Menu
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileSidebar = document.getElementById('mobileSidebar');
-    const overlay = document.getElementById('overlay');
-    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
-    
-    function openSidebar() {
-        mobileSidebar.classList.add('active');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeSidebar() {
-        mobileSidebar.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    
-    mobileMenuBtn?.addEventListener('click', openSidebar);
-    closeSidebarBtn?.addEventListener('click', closeSidebar);
-    overlay?.addEventListener('click', closeSidebar);
-    
-    document.querySelectorAll('.mobile-sidebar a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            closeSidebar();
-            const hash = this.getAttribute('href');
-            if(hash && hash.startsWith('#') && hash !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(hash);
-                if(target) target.scrollIntoView({behavior: 'smooth'});
-            }
-        });
-    });
-    
-    document.querySelectorAll('.desktop-nav a, .btn-outline').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const hash = this.getAttribute('href');
-            if(hash && hash.startsWith('#') && hash !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(hash);
-                if(target) target.scrollIntoView({behavior: 'smooth'});
-            }
-        });
-    });
-    
-    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you! Aurex team will reach out shortly.');
-        this.reset();
-    });
-    
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 900) closeSidebar();
-    });
-</script>
-</body>
-</html>
+            <div class="service-card">
+                <span class="service-icon">🔄</span>
+                <span class="badge-service">support</span>
+                <h4>Post-Installation Support</h4>
+                <p>Technical support, maintenance, and troubleshooting
