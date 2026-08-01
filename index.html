@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Aurex General Trading | Interiors • Lighting • Acoustics</title>
+    <title>Aurex General Trading | Material Supply for AVL & Interiors</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -14,22 +14,22 @@
         }
 
         :root {
-            --primary: #0a0a12;
-            --secondary: #1a1a2e;
-            --accent: #c8a84e;
+            --bg-primary: #0a0a12;
+            --bg-secondary: #12121f;
+            --bg-card: #1a1a2e;
+            --accent: #d4a843;
             --accent-light: #e8d5a3;
-            --accent-dark: #a8892e;
+            --accent-dark: #b8922e;
             --text-primary: #f0f0f0;
-            --text-secondary: #b0b0c8;
+            --text-secondary: #b8b8d0;
             --text-muted: #6a6a82;
-            --card-bg: #12121f;
-            --border-light: rgba(200, 168, 78, 0.12);
-            --shadow-glow: rgba(200, 168, 78, 0.08);
+            --border-glow: rgba(212, 168, 67, 0.15);
+            --shadow-glow: rgba(212, 168, 67, 0.08);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--primary);
+            background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
             scroll-behavior: smooth;
@@ -48,9 +48,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
-            background: rgba(10, 10, 18, 0.92);
-            border-bottom: 1px solid var(--border-light);
+            padding: 14px 24px;
+            background: rgba(10, 10, 18, 0.95);
+            border-bottom: 1px solid var(--border-glow);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -58,15 +58,16 @@
         }
 
         .logo img {
-            height: 48px;
+            height: 52px;
             width: auto;
             object-fit: contain;
             display: block;
+            filter: brightness(1.1);
         }
 
         .mobile-menu-btn {
-            background: rgba(200, 168, 78, 0.08);
-            border: 1px solid var(--border-light);
+            background: rgba(212, 168, 67, 0.08);
+            border: 1px solid var(--border-glow);
             cursor: pointer;
             padding: 10px;
             z-index: 1001;
@@ -80,9 +81,7 @@
             gap: 5px;
             transition: 0.3s;
         }
-        .mobile-menu-btn:hover {
-            background: rgba(200, 168, 78, 0.15);
-        }
+        .mobile-menu-btn:hover { background: rgba(212, 168, 67, 0.15); }
         .mobile-menu-btn span {
             display: block;
             width: 22px;
@@ -92,9 +91,7 @@
             border-radius: 3px;
         }
 
-        .desktop-nav {
-            display: none;
-        }
+        .desktop-nav { display: none; }
 
         .mobile-sidebar {
             position: fixed;
@@ -109,7 +106,7 @@
             transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 70px 28px 30px;
             overflow-y: auto;
-            border-left: 1px solid var(--border-light);
+            border-left: 1px solid var(--border-glow);
         }
         .mobile-sidebar.active { right: 0; }
 
@@ -131,7 +128,7 @@
 
         .mobile-sidebar .mobile-quote-btn {
             background: var(--accent);
-            color: var(--primary);
+            color: var(--bg-primary);
             text-align: center;
             border-radius: 30px;
             margin-top: 30px;
@@ -139,15 +136,13 @@
             font-weight: 700;
             border-bottom: none;
         }
-        .mobile-sidebar .mobile-quote-btn:hover {
-            background: var(--accent-light);
-        }
+        .mobile-sidebar .mobile-quote-btn:hover { background: var(--accent-light); }
 
         .close-sidebar {
             position: absolute;
             top: 15px;
             right: 20px;
-            background: rgba(200, 168, 78, 0.1);
+            background: rgba(212, 168, 67, 0.1);
             border: none;
             color: var(--accent);
             font-size: 28px;
@@ -160,9 +155,7 @@
             justify-content: center;
             transition: 0.3s;
         }
-        .close-sidebar:hover {
-            background: rgba(200, 168, 78, 0.2);
-        }
+        .close-sidebar:hover { background: rgba(212, 168, 67, 0.2); }
 
         .overlay {
             position: fixed;
@@ -190,7 +183,7 @@
             right: -15%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(200,168,78,0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212,168,67,0.06) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -201,7 +194,7 @@
             left: -10%;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(200,168,78,0.03) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212,168,67,0.04) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
@@ -262,15 +255,15 @@
             color: var(--accent);
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            background: rgba(200,168,78,0.06);
+            background: rgba(212,168,67,0.06);
             padding: 6px 18px;
             border-radius: 30px;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-glow);
         }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            color: var(--primary);
+            color: var(--bg-primary);
             border: none;
             padding: 16px 36px;
             font-weight: 700;
@@ -281,12 +274,12 @@
             width: 100%;
             max-width: 260px;
             text-align: center;
-            box-shadow: 0 4px 30px rgba(200,168,78,0.2);
+            box-shadow: 0 4px 30px rgba(212,168,67,0.2);
             letter-spacing: 0.3px;
         }
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 40px rgba(200,168,78,0.35);
+            box-shadow: 0 8px 40px rgba(212,168,67,0.35);
         }
 
         /* ========== SECTIONS ========== */
@@ -323,20 +316,9 @@
             border-radius: 32px;
             margin: 20px 0;
             padding: 50px 24px;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-glow);
             position: relative;
             overflow: hidden;
-        }
-        .sectors-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(200,168,78,0.03) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
         }
 
         .sectors-grid {
@@ -366,13 +348,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(200,168,78,0.03), transparent);
+            background: linear-gradient(135deg, rgba(212,168,67,0.03), transparent);
             opacity: 0;
             transition: 0.4s;
         }
         .sector-card:hover::before { opacity: 1; }
         .sector-card:hover {
-            border-color: rgba(200,168,78,0.2);
+            border-color: rgba(212,168,67,0.2);
             transform: translateY(-4px);
         }
 
@@ -395,7 +377,7 @@
             line-height: 1.6;
         }
 
-        /* ========== PRODUCT GRID ========== */
+        /* ========== PRODUCT / MATERIAL GRID ========== */
         .product-grid {
             display: flex;
             flex-direction: column;
@@ -406,14 +388,14 @@
         .product-card {
             border-radius: 24px;
             overflow: hidden;
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
             transition: all 0.4s;
             position: relative;
         }
         .product-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(200,168,78,0.25);
+            border-color: rgba(212,168,67,0.25);
             box-shadow: 0 12px 40px rgba(0,0,0,0.3);
         }
 
@@ -428,15 +410,13 @@
             object-fit: cover;
             transition: 0.5s;
         }
-        .product-card:hover .image-wrap img {
-            transform: scale(1.04);
-        }
+        .product-card:hover .image-wrap img { transform: scale(1.04); }
         .product-card .overlay-tag {
             position: absolute;
             top: 16px;
             left: 16px;
-            background: rgba(200,168,78,0.9);
-            color: var(--primary);
+            background: rgba(212,168,67,0.92);
+            color: var(--bg-primary);
             padding: 4px 16px;
             border-radius: 30px;
             font-size: 0.7rem;
@@ -452,7 +432,7 @@
             color: var(--text-primary);
             font-size: 0.95rem;
             letter-spacing: 0.3px;
-            background: var(--card-bg);
+            background: var(--bg-card);
         }
         .product-card p span { color: var(--accent); }
 
@@ -464,15 +444,13 @@
         }
 
         .card-bg {
-            background: var(--card-bg);
+            background: var(--bg-card);
             padding: 32px 28px;
             border-radius: 28px;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-glow);
             transition: 0.3s;
         }
-        .card-bg:hover {
-            border-color: rgba(200,168,78,0.15);
-        }
+        .card-bg:hover { border-color: rgba(212,168,67,0.15); }
 
         .card-bg h3 {
             font-size: 1.3rem;
@@ -487,7 +465,7 @@
             color: var(--text-secondary);
         }
 
-        /* ========== SERVICES ========== */
+        /* ========== SERVICES (Material Supply Focus) ========== */
         .service-grid {
             display: flex;
             flex-direction: column;
@@ -496,15 +474,15 @@
         }
 
         .service-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
             border-radius: 22px;
             padding: 24px 20px;
             transition: all 0.35s;
             position: relative;
         }
         .service-card:hover {
-            border-color: rgba(200,168,78,0.2);
+            border-color: rgba(212,168,67,0.2);
             transform: translateY(-4px);
             box-shadow: 0 8px 30px rgba(0,0,0,0.2);
         }
@@ -530,7 +508,7 @@
 
         .badge-service {
             display: inline-block;
-            background: rgba(200,168,78,0.1);
+            background: rgba(212,168,67,0.1);
             color: var(--accent);
             font-weight: 600;
             font-size: 0.65rem;
@@ -539,7 +517,7 @@
             margin-bottom: 10px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            border: 1px solid rgba(200,168,78,0.08);
+            border: 1px solid rgba(212,168,67,0.08);
         }
 
         /* ========== CONNECTING ========== */
@@ -549,28 +527,9 @@
             border-radius: 28px;
             margin: 20px 0;
             text-align: center;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-glow);
             position: relative;
             overflow: hidden;
-        }
-        .connecting-section::before {
-            content: '';
-            position: absolute;
-            top: -40%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(200,168,78,0.04) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .connecting-section p {
-            font-size: 0.92rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            position: relative;
-            z-index: 1;
         }
 
         .serve-tags {
@@ -588,8 +547,14 @@
             font-size: 0.85rem;
             letter-spacing: 0.5px;
         }
-        .serve-tags .dot {
-            color: var(--text-muted);
+        .serve-tags .dot { color: var(--text-muted); }
+
+        .connecting-section p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
         }
 
         /* ========== CONTACT ========== */
@@ -604,30 +569,28 @@
         input, textarea {
             width: 100%;
             padding: 16px 18px;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-glow);
             border-radius: 18px;
             font-family: inherit;
             font-size: 0.92rem;
-            background: var(--card-bg);
+            background: var(--bg-card);
             color: var(--text-primary);
             transition: 0.3s;
         }
         input:focus, textarea:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(200,168,78,0.06);
-            background: #16162a;
+            box-shadow: 0 0 0 4px rgba(212,168,67,0.06);
+            background: #1e1e32;
         }
-        input::placeholder, textarea::placeholder {
-            color: var(--text-muted);
-        }
+        input::placeholder, textarea::placeholder { color: var(--text-muted); }
         textarea { min-height: 110px; resize: vertical; }
 
         .contact-details {
-            background: var(--card-bg);
+            background: var(--bg-card);
             padding: 32px 28px;
             border-radius: 28px;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-glow);
         }
 
         .contact-info p {
@@ -648,20 +611,17 @@
         .info-box {
             margin-top: 30px;
             text-align: center;
-            background: rgba(200,168,78,0.04);
+            background: rgba(212,168,67,0.04);
             padding: 22px;
             border-radius: 30px;
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border-glow);
         }
         .info-box p {
             font-size: 0.88rem;
             font-weight: 500;
             color: var(--text-secondary);
         }
-        .info-box p strong {
-            color: var(--accent);
-            font-weight: 600;
-        }
+        .info-box p strong { color: var(--accent); }
 
         /* ========== FOOTER ========== */
         footer {
@@ -669,7 +629,7 @@
             color: var(--text-muted);
             padding: 32px 20px;
             text-align: center;
-            border-top: 1px solid var(--border-light);
+            border-top: 1px solid var(--border-glow);
         }
 
         .footer-inner {
@@ -682,12 +642,12 @@
         .footer-inner .gold { color: var(--accent); }
 
         .preview-note {
-            background: rgba(200,168,78,0.04);
+            background: rgba(212,168,67,0.04);
             text-align: center;
             padding: 10px;
             font-size: 0.72rem;
             color: var(--accent);
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-glow);
             letter-spacing: 0.8px;
             text-transform: uppercase;
         }
@@ -743,9 +703,9 @@
             }
             .btn-outline:hover {
                 background: var(--accent);
-                color: var(--primary);
+                color: var(--bg-primary);
                 border-color: var(--accent);
-                box-shadow: 0 4px 20px rgba(200,168,78,0.2);
+                box-shadow: 0 4px 20px rgba(212,168,67,0.2);
             }
 
             .mobile-menu-btn { display: none; }
@@ -822,18 +782,19 @@
 </head>
 <body>
 <div class="preview-note">
-    ✦ Aurex — Interiors • Lighting • Acoustics
+    ✦ Aurex — Material Supply for Audio • Video • Lighting • Interiors
 </div>
 
 <!-- Navbar -->
 <div class="navbar">
     <div class="logo">
-        <img src="logo.png" alt="Aurex Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 60%27%3E%3Crect width=%27200%27 height=%2760%27 fill=%27%230a0a12%27/%3E%3Ctext x=%2712%27 y=%2726%27 font-family=%27Inter%27 font-size=%2716%27 fill=%27%23c8a84e%27 font-weight=%27800%27%3EAUREX%3C/text%3E%3Ctext x=%2712%27 y=%2744%27 font-family=%27Inter%27 font-size=%278%27 fill=%27%23b0b0c8%27%3EGENERAL TRADING%3C/text%3E%3C/svg%3E'">
+        <img src="logo.png" alt="Aurex Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 200 60%27%3E%3Crect width=%27200%27 height=%2760%27 fill=%27%230a0a12%27/%3E%3Ctext x=%2712%27 y=%2726%27 font-family=%27Inter%27 font-size=%2718%27 fill=%27%23d4a843%27 font-weight=%27800%27%3EAUREX%3C/text%3E%3Ctext x=%2712%27 y=%2744%27 font-family=%27Inter%27 font-size=%278%27 fill=%27%23b8b8d0%27%3EGENERAL TRADING%3C/text%3E%3C/svg%3E'">
     </div>
     
     <div class="desktop-nav">
         <a href="#">Home</a>
         <a href="#sectors">Solutions</a>
+        <a href="#materials">Materials</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -852,6 +813,7 @@
     <button class="close-sidebar" id="closeSidebarBtn">&times;</button>
     <a href="#">Home</a>
     <a href="#sectors">Solutions</a>
+    <a href="#materials">Materials</a>
     <a href="#services">Our Services</a>
     <a href="#about">About Aurex</a>
     <a href="#contact">Contact</a>
@@ -863,70 +825,82 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">WE DESIGN. WE LIGHT. WE ACOUSTIC.</div>
-            <h2>Transforming Spaces Through <br><span class="highlight">Interiors, Lighting</span> &amp; Acoustics</h2>
-            <p>Aurex delivers end-to-end solutions in interior design, architectural lighting, and acoustic engineering — creating spaces that inspire, perform, and leave a lasting impression.</p>
+            <div class="hero-badge">AUDIO • VIDEO • LIGHTING • INTERIORS</div>
+            <h2>Premium Material Supply for <br><span class="highlight">AVL &amp; Interior Projects</span></h2>
+            <p>Aurex is a trusted supplier of high-quality materials for lighting, sound, LED screens, and interior fit-out projects. We provide reliable sourcing and timely delivery for contractors, designers, and businesses across the UAE and beyond.</p>
             <div class="hero-tagline">
-                <span>✦ INNOVATE</span>
-                <span>✦ DESIGN</span>
-                <span>✦ INSTALL</span>
-                <span>✦ INSPIRE</span>
+                <span>✦ SUPPLY</span>
+                <span>✦ SOURCE</span>
+                <span>✦ DELIVER</span>
+                <span>✦ SUPPORT</span>
             </div>
-            <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore Our Solutions →</button>
+            <button class="btn-primary" onclick="document.getElementById('sectors').scrollIntoView({behavior:'smooth'})">Explore Our Materials →</button>
         </div>
     </section>
 
-    <!-- ===== SECTORS ===== -->
+    <!-- ===== SECTORS / MATERIAL CATEGORIES ===== -->
     <div class="container" id="sectors">
         <div class="sectors-section">
-            <div class="section-title">Our <span class="highlight">Core Solutions</span></div>
-            <div class="section-sub">Innovative interior, lighting &amp; acoustic solutions for every space</div>
+            <div class="section-title">Material <span class="highlight">Supply Categories</span></div>
+            <div class="section-sub">Premium materials for audio, video, lighting, and interior projects</div>
             
             <div class="sectors-grid">
                 <div class="sector-card">
-                    <span class="sector-icon">🏛️</span>
-                    <h3>Interior Design &amp; Fit-out</h3>
-                    <p>Complete interior concepts for bars, pubs, clubs, hotels, restaurants, and commercial spaces. Custom joinery, finishes, and spatial design.</p>
-                </div>
-                <div class="sector-card">
                     <span class="sector-icon">💡</span>
-                    <h3>Architectural &amp; Decorative Lighting</h3>
-                    <p>DMX lighting, LED pixel mapping, mood lighting, and intelligent control systems for dynamic and energy-efficient illumination.</p>
+                    <h3>Lighting Materials</h3>
+                    <p>DMX lighting fixtures, LED strips, pixel mapping controllers, architectural lighting, stage lighting, and decorative lighting materials.</p>
                 </div>
                 <div class="sector-card">
-                    <span class="sector-icon">🔇</span>
-                    <h3>Acoustic Soundproofing</h3>
-                    <p>Studio-grade acoustic treatment, soundproofing solutions, noise control, and reverberation management for venues and commercial spaces.</p>
+                    <span class="sector-icon">🔊</span>
+                    <h3>Audio &amp; Sound Materials</h3>
+                    <p>Professional speakers, amplifiers, mixing consoles, microphones, sound processors, cables, and complete audio system components.</p>
+                </div>
+                <div class="sector-card">
+                    <span class="sector-icon">🖥️</span>
+                    <h3>LED &amp; Video Materials</h3>
+                    <p>LED video walls, digital displays, LED panels, controllers, power supplies, and video processing equipment for venues and events.</p>
+                </div>
+                <div class="sector-card">
+                    <span class="sector-icon">🏛️</span>
+                    <h3>Interior &amp; Acoustic Materials</h3>
+                    <p>Acoustic panels, soundproofing materials, ceiling systems, wall cladding, flooring, joinery materials, and decorative finishes.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ===== PRODUCT SHOWCASE ===== -->
-    <div class="container">
-        <div class="section-title" style="font-size: 1.5rem;">What <span class="highlight">We Deliver</span></div>
-        <div class="section-sub">Premium solutions crafted for exceptional experiences</div>
+    <!-- ===== MATERIAL SHOWCASE ===== -->
+    <div class="container" id="materials">
+        <div class="section-title" style="font-size: 1.5rem;">Featured <span class="highlight">Materials</span></div>
+        <div class="section-sub">Quality materials sourced from trusted manufacturers</div>
         <div class="product-grid">
             <div class="product-card">
                 <div class="image-wrap">
-                    <img src="interior-design.jpg" alt="Interior Design" onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600'">
-                    <span class="overlay-tag">Interiors</span>
-                </div>
-                <p>🏛️ <span>Interior Design</span> — Fit-out &amp; Concepts</p>
-            </div>
-            <div class="product-card">
-                <div class="image-wrap">
-                    <img src="lighting-solution.jpg" alt="Lighting Solutions" onerror="this.src='https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600'">
+                    <img src="lighting-materials.jpg" alt="Lighting Materials" onerror="this.src='https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600'">
                     <span class="overlay-tag">Lighting</span>
                 </div>
-                <p>💡 <span>Lighting</span> — Architectural &amp; Decorative</p>
+                <p>💡 <span>Lighting Materials</span> — LED, DMX, Architectural</p>
             </div>
             <div class="product-card">
                 <div class="image-wrap">
-                    <img src="acoustic-treatment.jpg" alt="Acoustic Solutions" onerror="this.src='https://images.unsplash.com/photo-1581092335871-4f5d4f0ca8bf?w=600'">
-                    <span class="overlay-tag">Acoustics</span>
+                    <img src="audio-materials.jpg" alt="Audio Materials" onerror="this.src='https://images.unsplash.com/photo-1598387846142-5d6a0c0c9b1a?w=600'">
+                    <span class="overlay-tag">Audio</span>
                 </div>
-                <p>🔇 <span>Acoustics</span> — Soundproofing &amp; Treatment</p>
+                <p>🔊 <span>Audio Materials</span> — Speakers, Amps, Cables</p>
+            </div>
+            <div class="product-card">
+                <div class="image-wrap">
+                    <img src="led-materials.jpg" alt="LED Materials" onerror="this.src='https://images.unsplash.com/photo-1540574167326-75c4b0ac0d2a?w=600'">
+                    <span class="overlay-tag">LED</span>
+                </div>
+                <p>🖥️ <span>LED Materials</span> — Screens, Panels, Controllers</p>
+            </div>
+            <div class="product-card">
+                <div class="image-wrap">
+                    <img src="interior-materials.jpg" alt="Interior Materials" onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600'">
+                    <span class="overlay-tag">Interiors</span>
+                </div>
+                <p>🏛️ <span>Interior Materials</span> — Acoustics, Finishes, Fit-out</p>
             </div>
         </div>
     </div>
@@ -936,84 +910,85 @@
         <div class="two-col-grid">
             <div class="card-bg">
                 <h3>About Aurex</h3>
-                <p>Aurex General Trading FZE LLC is a premier provider of integrated interior, lighting, and acoustic solutions based in the UAE. We specialize in transforming commercial, hospitality, and entertainment spaces with innovative design and cutting-edge technology.</p>
+                <p>Aurex General Trading FZE LLC is a premier supplier of materials for audio, video, lighting, and interior projects. Based in the UAE, we serve contractors, designers, and businesses across the region with premium quality products and reliable supply chain solutions.</p>
             </div>
             <div class="card-bg">
                 <h3>Our Mission</h3>
-                <p>To deliver immersive experiences through premium quality interiors, lighting, and acoustic solutions. We combine technical expertise with creative design to bring every space to life — from nightclubs and hotels to corporate offices and residential villas.</p>
+                <p>To provide exceptional material supply solutions that empower creative projects. We combine industry expertise with a global network of manufacturers to deliver the right materials, on time, every time.</p>
             </div>
         </div>
     </div>
 
     <!-- ===== SERVICES ===== -->
     <div class="container" id="services">
-        <div class="section-title">Our <span class="highlight">Expert Services</span></div>
-        <div class="section-sub">End-to-end solutions from design to installation and support</div>
+        <div class="section-title">Our <span class="highlight">Supply Services</span></div>
+        <div class="section-sub">End-to-end material sourcing and supply solutions</div>
         <div class="service-grid">
             <div class="service-card">
-                <span class="service-icon">🏛️</span>
-                <span class="badge-service">interiors</span>
-                <h4>Interior Fit-out &amp; Design</h4>
-                <p>Complete interior concepts for bars, pubs, clubs, hotels, restaurants, and commercial spaces.</p>
+                <span class="service-icon">📦</span>
+                <span class="badge-service">supply</span>
+                <h4>Material Sourcing</h4>
+                <p>We source premium materials from trusted manufacturers worldwide for lighting, audio, LED, and interior projects.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🚢</span>
+                <span class="badge-service">logistics</span>
+                <h4>Bulk Supply &amp; Logistics</h4>
+                <p>Efficient handling of bulk orders with reliable shipping, documentation, and delivery across the UAE and GCC.</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">💡</span>
                 <span class="badge-service">lighting</span>
-                <h4>Architectural &amp; Decorative Lighting</h4>
-                <p>DMX lighting, LED pixel mapping, mood lighting, and intelligent control systems.</p>
+                <h4>Lighting Material Supply</h4>
+                <p>Complete range of lighting materials including DMX fixtures, LED strips, controllers, and architectural lighting.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">🔇</span>
-                <span class="badge-service">acoustics</span>
-                <h4>Acoustic Soundproofing</h4>
-                <p>Studio-grade acoustic treatment, soundproofing solutions, and noise control.</p>
+                <span class="service-icon">🔊</span>
+                <span class="badge-service">audio</span>
+                <h4>Audio Material Supply</h4>
+                <p>Professional audio components including speakers, amplifiers, mixers, microphones, and sound system accessories.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">🎨</span>
-                <span class="badge-service">design</span>
-                <h4>Custom Interior Concepts</h4>
-                <p>Tailored design solutions for unique spaces — from concept to completion.</p>
+                <span class="service-icon">🖥️</span>
+                <span class="badge-service">video</span>
+                <h4>LED &amp; Video Material Supply</h4>
+                <p>LED video walls, digital displays, panels, controllers, and video processing equipment for events and venues.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">⚡</span>
-                <span class="badge-service">control</span>
-                <h4>Lighting Control Systems</h4>
-                <p>Smart lighting control, DMX programming, and integration with building systems.</p>
+                <span class="service-icon">🏛️</span>
+                <span class="badge-service">interiors</span>
+                <h4>Interior &amp; Acoustic Material Supply</h4>
+                <p>Acoustic panels, soundproofing, ceiling systems, wall cladding, and decorative interior materials.</p>
             </div>
             <div class="service-card">
-                <span class="service-icon">🧱</span>
-                <span class="badge-service">treatment</span>
-                <h4>Reverberation Management</h4>
-                <p>Acoustic paneling, bass traps, and diffusion solutions for optimal sound quality.</p>
+                <span class="service-icon">✅</span>
+                <span class="badge-service">quality</span>
+                <h4>Quality Assurance</h4>
+                <p>All materials meet industry standards and are sourced from certified, reliable manufacturers.</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">🔧</span>
                 <span class="badge-service">support</span>
-                <h4>Testing &amp; Troubleshooting</h4>
-                <p>Technical support, diagnostics, and on-site maintenance for all systems.</p>
+                <h4>Technical Support</h4>
+                <p>Expert guidance on material selection, compatibility, and project requirements for seamless integration.</p>
             </div>
             <div class="service-card">
                 <span class="service-icon">🎯</span>
                 <span class="badge-service">custom</span>
-                <h4>Custom Design &amp; Integration</h4>
-                <p>Tailored solutions for unique spaces, blending aesthetics with functionality.</p>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">📐</span>
-                <span class="badge-service">planning</span>
-                <h4>Space Planning &amp; Layout</h4>
-                <p>Efficient space utilization and interior layout design for optimal flow and experience.</p>
+                <h4>Custom Sourcing</h4>
+                <p>Tailored sourcing solutions for unique project requirements across different industries and applications.</p>
             </div>
         </div>
     </div>
 
-    <!-- ===== CONNECTING / WE SERVE ===== -->
+    <!-- ===== WE SERVE ===== -->
     <div class="container">
         <div class="connecting-section">
             <div class="section-title" style="margin-bottom: 8px;">We <span class="highlight">Serve</span></div>
             <div class="serve-tags">
-                <span>PUBS</span><span class="dot">•</span>
-                <span>BARS</span><span class="dot">•</span>
+                <span>CONTRACTORS</span><span class="dot">•</span>
+                <span>DESIGNERS</span><span class="dot">•</span>
+                <span>PUBS &amp; BARS</span><span class="dot">•</span>
                 <span>NIGHTCLUBS</span><span class="dot">•</span>
                 <span>HOTELS</span><span class="dot">•</span>
                 <span>RESTAURANTS</span><span class="dot">•</span>
@@ -1021,14 +996,17 @@
                 <span>ENTERTAINMENT VENUES</span><span class="dot">•</span>
                 <span>COMMERCIAL &amp; RESIDENTIAL</span>
             </div>
-            <p><strong style="color: var(--accent);">📍 Strategic hub:</strong> UAE — delivering world-class interiors, lighting &amp; acoustics across the region.</p>
+            <p><strong style="color: var(--accent);">📍 Strategic hub:</strong> UAE — supplying premium materials across the region.</p>
+            <p style="margin-top: 12px; font-size: 0.85rem; color: var(--text-muted);">
+                📞 +971 542 528 907 &nbsp;|&nbsp; ✉️ sales@aurexgeneraltrading.com
+            </p>
         </div>
     </div>
 
     <!-- ===== CONTACT ===== -->
     <div class="container" id="contact">
         <div class="section-title">Get in <span class="highlight">Touch</span></div>
-        <div class="section-sub">Let's bring your vision to life</div>
+        <div class="section-sub">Let's discuss your material requirements</div>
         <div class="contact-row">
             <div class="card-bg" style="padding: 32px 28px;">
                 <h3 style="font-size: 1.2rem; margin-bottom: 20px; color: var(--accent);">Request a Quote</h3>
@@ -1040,7 +1018,7 @@
                         <input type="email" placeholder="Email Address *" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Tell us about your project *" required></textarea>
+                        <textarea placeholder="Tell us about your material requirements *" required></textarea>
                     </div>
                     <button type="submit" class="btn-primary" style="width: 100%;">Submit →</button>
                 </form>
@@ -1053,13 +1031,13 @@
                     <p><strong>📍 Office:</strong> CWS-1V-224656</p>
                     <p><strong>🏢 Address:</strong> 26th Floor, Amber Gem Tower, Ajman, UAE</p>
                 </div>
-                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-light);">
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-glow);">
                     <p style="color: var(--accent); font-weight: 600; font-size: 0.95rem;">🌐 www.aurexgeneraltrading.com</p>
                 </div>
             </div>
         </div>
         <div class="info-box">
-            <p><strong>✔️ Expert Team</strong> &nbsp;|&nbsp; <strong>✔️ Premium Quality</strong> &nbsp;|&nbsp; <strong>✔️ Innovative Solutions</strong> &nbsp;|&nbsp; <strong>✔️ Reliable Support</strong></p>
+            <p><strong>✔️ Premium Quality</strong> &nbsp;|&nbsp; <strong>✔️ Reliable Supply</strong> &nbsp;|&nbsp; <strong>✔️ Competitive Pricing</strong> &nbsp;|&nbsp; <strong>✔️ Expert Support</strong></p>
         </div>
     </div>
 </main>
@@ -1069,8 +1047,8 @@
     <div class="container">
         <div class="footer-inner">
             <div>© 2026 Aurex General Trading FZE LLC</div>
-            <div>📍 Ajman, UAE | <span class="gold">✦</span> Interiors • Lighting • Acoustics</div>
-            <div><span class="gold">✦</span> Design. Innovate. Inspire.</div>
+            <div>📍 Ajman, UAE | <span class="gold">✦</span> Material Supply for AVL &amp; Interiors</div>
+            <div><span class="gold">✦</span> Supply. Source. Deliver. Support.</div>
         </div>
     </div>
 </footer>
