@@ -24,3 +24,10 @@
   .nav.open{display:flex!important}
   .menu{display:inline-flex;align-items:center;justify-content:center;font-size:25px}
 }
+
+/* SEO support: accessible related-category internal links */
+.related-links{background:#fff;padding-top:48px;padding-bottom:48px}
+.related-links h2{font:800 clamp(27px,3vw,38px)/1.15 Manrope,sans-serif;margin:0 0 22px;color:#111d2e}
+.related-link-list{display:flex;flex-wrap:wrap;gap:12px}
+.related-link-list a{display:inline-flex;padding:12px 16px;border:1px solid #d7dde6;border-radius:6px;color:#172235;font-size:13px;font-weight:700}
+.related-link-list a:hover{border-color:#c28b27;color:#9a6b18}
