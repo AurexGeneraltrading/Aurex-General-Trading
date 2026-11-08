@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://aurexgeneraltrading.com/sitemap.xml
+Sitemap: https://www.aurexgeneraltrading.com/sitemap.xml
