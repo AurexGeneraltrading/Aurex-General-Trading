@@ -1,4 +1,4 @@
 // AUREX gallery configuration. Replace these two values with your Supabase Project URL and anon/public key.
 // NEVER place a Supabase service_role key in this file.
-window.AUREX_SUPABASE_URL = "PASTE_SUPABASE_PROJECT_URL_HERE";
-window.AUREX_SUPABASE_ANON_KEY = "PASTE_SUPABASE_ANON_PUBLIC_KEY_HERE";
+window.AUREX_SUPABASE_URL = "https://qwrknflfybpcsaeboaoh.supabase.co";
+window.AUREX_SUPABASE_ANON_KEY = "sb_publishable_0RhuYr3ATExNFCs3z43rfw_Ewe2NavZ";
