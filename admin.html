@@ -1,6 +1,144 @@
+
 <!doctype html>
-<html lang="en-AE"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AUREX Gallery Admin</title><meta name="robots" content="noindex,nofollow"><link rel="icon" type="image/png" href="assets/aurex-logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="gallery.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script defer src="admin.js"></script></head><body class="admin-body">
-<header class="admin-top"><a class="brand" href="index.html"><img src="assets/aurex-logo.png" alt="AUREX logo"><span><b>AUREX</b><small>GALLERY ADMIN</small></span></a><a href="projects.html" class="admin-public-link">View public gallery ↗</a></header><main class="admin-wrap"><section id="loginPanel" class="admin-panel login-panel"><p class="kicker dark">PRIVATE ACCESS</p><h1>Gallery Admin</h1><p>Sign in to manage AUREX project photos and videos.</p><form id="loginForm" class="admin-form"><label>Email address<input type="email" id="loginEmail" required autocomplete="username"></label><label>Password<input type="password" id="loginPassword" required autocomplete="current-password"></label><button class="btn gold" type="submit">Sign in securely →</button></form><p id="loginMessage" class="admin-message" role="status"></p></section>
-<section id="dashboard" hidden><div class="admin-heading"><div><p class="kicker dark">CONTENT MANAGEMENT</p><h1>Projects Dashboard</h1><p>Add a project, upload media and publish it to your website.</p></div><button id="logoutButton" class="admin-outline">Log out</button></div>
-<div class="admin-columns"><section class="admin-panel"><h2 id="editorTitle">Add a project</h2><form id="projectForm" class="admin-form"><input type="hidden" id="projectId"><label>Project title<input id="projectTitle" maxlength="120" required placeholder="e.g. Indoor LED Screen Installation"></label><label>Category<select id="projectCategory" required><option value="LED Screen Installations">LED Screen Installations</option><option value="Lighting & Programming">Lighting &amp; Programming</option><option value="Electrical Works">Electrical Works</option><option value="Building Materials">Building Materials</option></select></label><label>Location (optional)<input id="projectLocation" maxlength="100" placeholder="e.g. Dubai, UAE"></label><label>Project description<textarea id="projectDescription" rows="4" maxlength="1000" placeholder="Briefly describe the work completed…"></textarea></label><label>Photos and videos<input id="mediaFiles" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm" multiple><small>Images: JPG, PNG, WebP. Videos: MP4 or WebM. Upload each file up to 100 MB. For best website performance, keep videos compressed.</small></label><label class="check-label"><input type="checkbox" id="projectPublished" checked> Publish this project on the public gallery</label><div class="admin-actions"><button class="btn gold" type="submit" id="saveProjectButton">Save project</button><button class="admin-outline" type="button" id="resetFormButton">Clear form</button></div><p id="adminMessage" class="admin-message" role="status"></p></form></section>
-<section class="admin-panel project-manager"><div class="manager-head"><h2>Existing projects</h2><button id="refreshButton" class="admin-outline">Refresh</button></div><div id="adminProjectList" class="admin-project-list">Loading…</div></section></div></section></main><footer class="admin-footer">AUREX General Trading FZE LLC · Private administration</footer></body></html>
+<html lang="en-AE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREX Gallery Admin</title>
+  <meta name="robots" content="noindex,nofollow">
+
+  <link rel="icon" type="image/png" href="assets/aurex-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gallery.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js?v=2"></script>
+  <script defer src="admin.js?v=2"></script>
+</head>
+
+<body class="admin-body">
+
+<header class="admin-top">
+  <a class="brand" href="index.html">
+    <img src="assets/aurex-logo.png" alt="AUREX logo">
+    <span><b>AUREX</b><small>GALLERY ADMIN</small></span>
+  </a>
+  <a href="projects.html" class="admin-public-link">View public gallery ↗</a>
+</header>
+
+<main class="admin-wrap">
+
+  <section id="loginPanel" class="admin-panel login-panel">
+    <p class="kicker dark">PRIVATE ACCESS</p>
+    <h1>Gallery Admin</h1>
+    <p>Sign in to manage AUREX project photos and videos.</p>
+
+    <form id="loginForm" class="admin-form">
+      <label>
+        Email address
+        <input type="email" id="loginEmail" required autocomplete="username">
+      </label>
+
+      <label>
+        Password
+        <input type="password" id="loginPassword" required autocomplete="current-password">
+      </label>
+
+      <button class="btn gold" type="submit">Sign in securely →</button>
+    </form>
+
+    <p id="loginMessage" class="admin-message" role="status"></p>
+  </section>
+
+  <section id="dashboard" hidden>
+
+    <div class="admin-heading">
+      <div>
+        <p class="kicker dark">CONTENT MANAGEMENT</p>
+        <h1>Projects Dashboard</h1>
+        <p>Add a project, upload media and publish it to your website.</p>
+      </div>
+      <button id="logoutButton" class="admin-outline">Log out</button>
+    </div>
+
+    <div class="admin-columns">
+
+      <section class="admin-panel">
+        <h2 id="editorTitle">Add a project</h2>
+
+        <form id="projectForm" class="admin-form">
+          <input type="hidden" id="projectId">
+
+          <label>
+            Project title
+            <input id="projectTitle" maxlength="120" required placeholder="e.g. Indoor LED Screen Installation">
+          </label>
+
+          <label>
+            Category
+            <select id="projectCategory" required>
+              <option value="LED Screen Installations">LED Screen Installations</option>
+              <option value="Lighting & Programming">Lighting &amp; Programming</option>
+              <option value="Electrical Works">Electrical Works</option>
+              <option value="Building Materials">Building Materials</option>
+            </select>
+          </label>
+
+          <label>
+            Location (optional)
+            <input id="projectLocation" maxlength="100" placeholder="e.g. Dubai, UAE">
+          </label>
+
+          <label>
+            Project description
+            <textarea id="projectDescription" rows="4" maxlength="1000" placeholder="Briefly describe the work completed…"></textarea>
+          </label>
+
+          <label>
+            Photos and videos
+            <input id="mediaFiles" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm" multiple>
+            <small>
+              Images: JPG, PNG, WebP. Videos: MP4 or WebM.
+              Upload each file up to 100 MB. For best website performance, keep videos compressed.
+            </small>
+          </label>
+
+          <label class="check-label">
+            <input type="checkbox" id="projectPublished" checked>
+            Publish this project on the public gallery
+          </label>
+
+          <div class="admin-actions">
+            <button class="btn gold" type="submit" id="saveProjectButton">Save project</button>
+            <button class="admin-outline" type="button" id="resetFormButton">Clear form</button>
+          </div>
+
+          <p id="adminMessage" class="admin-message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="admin-panel project-manager">
+        <div class="manager-head">
+          <h2>Existing projects</h2>
+          <button id="refreshButton" class="admin-outline">Refresh</button>
+        </div>
+
+        <div id="adminProjectList" class="admin-project-list">Loading…</div>
+      </section>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="admin-footer">
+  AUREX General Trading FZE LLC · Private administration
+</footer>
+
+</body>
+</html>
